@@ -1,0 +1,27 @@
+.profile-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  background: #faf9f8;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+}
+
+.profile-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-save-input {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.profile-save-input input {
+  flex: 1;
+  min-width: 160px;
+}

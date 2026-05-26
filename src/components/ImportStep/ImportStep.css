@@ -1,0 +1,96 @@
+/* ImportStep.css */
+
+.import-step {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.import-step__header {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.import-step__summary {
+  font-size: 13px;
+  color: var(--text-secondary, #555);
+}
+
+.import-step__actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.import-step__execute-btn {
+  padding: 6px 16px;
+  background-color: var(--communication-foreground, #0078d4);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.import-step__execute-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.import-step__log {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  background: var(--neutral-10, #f3f2f1);
+  border: 1px solid var(--neutral-20, #edebe9);
+  border-radius: 2px;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+.import-step__log-entry {
+  padding: 2px 0;
+}
+
+.import-step__log-entry--error {
+  color: #a4262c;
+}
+
+.import-step__report {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.import-step__report-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.import-step__report-counts {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+}
+
+.import-step__report-section {
+  font-size: 13px;
+}
+
+.import-step__report-section h4 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.import-step__report-section ul {
+  margin: 0;
+  padding: 0 0 0 16px;
+}
+
+.import-step__failed-item {
+  color: #a4262c;
+}

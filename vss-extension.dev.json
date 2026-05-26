@@ -1,0 +1,47 @@
+{
+    "manifestVersion": 1,
+    "id": "ado-reqif-importer-dev",
+    "publisher": "req-tech",
+    "version": "1.0.0",
+    "name": "ReqIF Importer (Dev)",
+    "description": "ReqIF Importer — development build served from localhost.",
+    "public": false,
+    "categories": ["Azure Boards"],
+    "targets": [
+        { "id": "Microsoft.VisualStudio.Services.Cloud" }
+    ],
+    "demands": [
+        "api-version/7.0"
+    ],
+    "scopes": [
+        "vso.work_write",
+        "vso.project"
+    ],
+    "icons": {
+        "default": "images/logo.png"
+    },
+    "branding": {
+        "color": "#FF6B35",
+        "theme": "dark"
+    },
+    "baseUri": "https://localhost:3000",
+    "contributions": [
+        {
+            "id": "reqif-importer-hub",
+            "type": "ms.vss-web.hub",
+            "targets": [
+                "ms.vss-work-web.work-hub-group"
+            ],
+            "properties": {
+                "name": "ReqIF Importer (Dev)",
+                "uri": "hub/hub.html",
+                "iconName": "Import",
+                "order": 99
+            }
+        }
+    ],
+    "files": [
+        { "path": "dist", "addressable": true },
+        { "path": "images", "addressable": true }
+    ]
+}

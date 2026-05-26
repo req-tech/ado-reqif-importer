@@ -1,0 +1,58 @@
+{
+    "manifestVersion": 1,
+    "id": "ado-reqif-importer",
+    "publisher": "req-tech",
+    "version": "1.0.0",
+    "name": "ReqIF Importer",
+    "description": "Import requirements from ReqIF (.reqif, .reqifz) files into Azure DevOps Work Items — browser-only, no backend required.",
+    "public": false,
+    "categories": ["Azure Boards"],
+    "targets": [
+        { "id": "Microsoft.VisualStudio.Services.Cloud" }
+    ],
+    "demands": [
+        "api-version/7.0"
+    ],
+    "scopes": [
+        "vso.work_write",
+        "vso.project"
+    ],
+    "icons": {
+        "default": "images/logo.png"
+    },
+    "branding": {
+        "color": "#0078D4",
+        "theme": "dark"
+    },
+    "content": {
+        "details": { "path": "overview.md" }
+    },
+    "links": {
+        "repository": { "uri": "https://github.com/req-tech/ado-reqif-importer" },
+        "issues": { "uri": "https://github.com/req-tech/ado-reqif-importer/issues" }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/req-tech/ado-reqif-importer"
+    },
+    "contributions": [
+        {
+            "id": "reqif-importer-hub",
+            "type": "ms.vss-web.hub",
+            "targets": [
+                "ms.vss-work-web.work-hub-group"
+            ],
+            "properties": {
+                "name": "ReqIF Importer",
+                "uri": "dist/hub/hub.html",
+                "iconName": "Import",
+                "order": 99
+            }
+        }
+    ],
+    "files": [
+        { "path": "dist", "addressable": true },
+        { "path": "images", "addressable": true },
+        { "path": "overview.md" }
+    ]
+}

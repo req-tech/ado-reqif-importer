@@ -1,0 +1,56 @@
+.status-log {
+  overflow-y: auto;
+  border: 1px solid var(--palette-neutral-10, #e0e0e0);
+  border-radius: 2px;
+  background: var(--palette-neutral-0, #fff);
+  font-size: 12px;
+  font-family: 'Cascadia Code', 'Consolas', monospace;
+}
+
+.status-log__entry {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 3px 10px;
+  border-bottom: 1px solid var(--palette-neutral-4, #f4f4f4);
+}
+
+.status-log__entry:last-child {
+  border-bottom: none;
+}
+
+.status-log__entry--info {
+  color: var(--palette-neutral-80, #333);
+}
+
+.status-log__entry--warning {
+  color: var(--palette-orange, #d77400);
+  background: var(--palette-orange-tint40, #fff8f0);
+}
+
+.status-log__entry--error {
+  color: var(--palette-red-dark, #751d0c);
+  background: var(--palette-red-tint40, #fff0f0);
+}
+
+.status-log__icon {
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+}
+
+.status-log__time {
+  flex-shrink: 0;
+  color: var(--palette-neutral-40, #aaa);
+  font-size: 11px;
+}
+
+.status-log__message {
+  flex: 1;
+}
+
+.status-log__context {
+  flex-shrink: 0;
+  color: var(--palette-neutral-50, #999);
+  font-style: italic;
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<REQ-IF xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd">
+  <THE-HEADER>
+    <REQ-IF-HEADER IDENTIFIER="hdr-001">
+      <COMMENT>Sample ReqIF document for integration testing</COMMENT>
+      <CREATION-TIME>2024-01-01T00:00:00.000Z</CREATION-TIME>
+      <REQ-IF-TOOL-ID>ado-reqif-importer-test</REQ-IF-TOOL-ID>
+      <REQ-IF-VERSION>1.0</REQ-IF-VERSION>
+      <SOURCE-TOOL-ID>sample-tool</SOURCE-TOOL-ID>
+      <TITLE>Sample Requirements</TITLE>
+    </REQ-IF-HEADER>
+  </THE-HEADER>
+  <CORE-CONTENT>
+    <REQ-IF-CONTENT>
+      <DATATYPES>
+        <DATATYPE-DEFINITION-STRING IDENTIFIER="dt-string" LAST-CHANGE="2024-01-01T00:00:00.000Z" LONG-NAME="String" MAX-LENGTH="32000"/>
+      </DATATYPES>
+      <SPEC-TYPES>
+        <SPEC-OBJECT-TYPE IDENTIFIER="sot-requirement" LAST-CHANGE="2024-01-01T00:00:00.000Z" LONG-NAME="Requirement">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="attr-title" LAST-CHANGE="2024-01-01T00:00:00.000Z" LONG-NAME="Title">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>dt-string</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="attr-desc" LAST-CHANGE="2024-01-01T00:00:00.000Z" LONG-NAME="Description">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>dt-string</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+          </SPEC-ATTRIBUTES>
+        </SPEC-OBJECT-TYPE>
+      </SPEC-TYPES>
+      <SPEC-OBJECTS>
+        <SPEC-OBJECT IDENTIFIER="obj-001" LAST-CHANGE="2024-01-01T00:00:00.000Z">
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>sot-requirement</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="First requirement title">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>attr-title</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Description of first requirement">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>attr-desc</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="obj-002" LAST-CHANGE="2024-01-01T00:00:00.000Z">
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>sot-requirement</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Second requirement title">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>attr-title</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Description of second requirement">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>attr-desc</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+        </SPEC-OBJECT>
+      </SPEC-OBJECTS>
+      <SPECIFICATIONS>
+        <SPECIFICATION IDENTIFIER="spec-001" LAST-CHANGE="2024-01-01T00:00:00.000Z" LONG-NAME="Sample Specification">
+          <CHILDREN>
+            <SPEC-HIERARCHY IDENTIFIER="sh-001" LAST-CHANGE="2024-01-01T00:00:00.000Z">
+              <OBJECT>
+                <SPEC-OBJECT-REF>obj-001</SPEC-OBJECT-REF>
+              </OBJECT>
+            </SPEC-HIERARCHY>
+            <SPEC-HIERARCHY IDENTIFIER="sh-002" LAST-CHANGE="2024-01-01T00:00:00.000Z">
+              <OBJECT>
+                <SPEC-OBJECT-REF>obj-002</SPEC-OBJECT-REF>
+              </OBJECT>
+            </SPEC-HIERARCHY>
+          </CHILDREN>
+        </SPECIFICATION>
+      </SPECIFICATIONS>
+    </REQ-IF-CONTENT>
+  </CORE-CONTENT>
+</REQ-IF>
