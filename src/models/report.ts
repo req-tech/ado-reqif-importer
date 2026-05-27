@@ -7,6 +7,7 @@ export interface ImportStatus {
   totalItems: number;
   processedItems: number;
   createdItems: number;
+  updatedItems: number;
   skippedItems: number;
   failedItems: number;
   /** Rolling log entries for the status view */
@@ -36,9 +37,11 @@ export interface PreviewWarning {
 export interface ImportReport {
   completedAt: string; // ISO 8601
   totalCreated: number;
+  totalUpdated: number;
   totalSkipped: number;
   totalFailed: number;
   createdItems: ImportedItem[];
+  updatedItems: UpdatedItem[];
   skippedItems: SkippedItem[];
   failedItems: FailedItem[];
   allWarnings: PreviewWarning[];
@@ -49,6 +52,14 @@ export interface ImportedItem {
   specObjectName: string;
   workItemId: number;
   workItemUrl: string; // direct link to the ADO work item
+  workItemType: string;
+}
+
+export interface UpdatedItem {
+  specObjectId: string;
+  specObjectName: string;
+  workItemId: number;
+  workItemUrl: string;
   workItemType: string;
 }
 

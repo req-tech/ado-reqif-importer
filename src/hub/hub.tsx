@@ -1,4 +1,4 @@
-import 'azure-devops-ui/Core/override.css';
+import '../styles/global.css';
 import * as SDK from 'azure-devops-extension-sdk';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
@@ -7,6 +7,7 @@ import WizardNav from '../components/common/WizardNav';
 import ErrorBanner from '../components/common/ErrorBanner';
 import UploadStep from '../components/UploadStep/UploadStep';
 import MappingStep from '../components/MappingStep/MappingStep';
+import ValueMappingStep from '../components/ValueMappingStep/ValueMappingStep';
 import PreviewStep from '../components/PreviewStep/PreviewStep';
 import ImportStep from '../components/ImportStep/ImportStep';
 
@@ -17,6 +18,8 @@ const StepRouter: React.FC = () => {
       return <UploadStep />;
     case 'mapping':
       return <MappingStep />;
+    case 'valuemapping':
+      return <ValueMappingStep />;
     case 'preview':
       return <PreviewStep />;
     case 'import':
@@ -40,6 +43,13 @@ const App: React.FC = () => {
 
 SDK.init()
   .then(() => {
+    const configProject = SDK.getConfiguration()?.project?.name;
+    const contextProject = SDK.getWebContext().project?.name;
+    const projectName = configProject || contextProject;
+    if (projectName) {
+      (window as unknown as { __ADO_PROJECT__?: string }).__ADO_PROJECT__ = projectName;
+    }
+
     const container = document.getElementById('root');
     if (!container) {
       throw new Error('Root element #root not found in hub.html');

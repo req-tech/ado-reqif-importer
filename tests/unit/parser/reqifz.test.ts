@@ -43,4 +43,20 @@ describe('parseReqIfFile — .reqifz', () => {
       /does not contain/i
     );
   });
+
+  it('prefers .reqif.orig over .reqif when both are present in the archive', async () => {
+    const { zipSync } = await import('fflate');
+    const enc = new TextEncoder();
+
+    const makeReqif = (id: string) =>
+      `<?xml version="1.0" encoding="UTF-8"?><REQ-IF xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"><THE-HEADER><REQ-IF-HEADER IDENTIFIER="${id}"><TITLE>${id}</TITLE><REQ-IF-TOOL-ID>t</REQ-IF-TOOL-ID><REQ-IF-VERSION>1.0</REQ-IF-VERSION><SOURCE-TOOL-ID>s</SOURCE-TOOL-ID><TIME>2024-01-01T00:00:00Z</TIME></REQ-IF-HEADER></THE-HEADER><CORE-CONTENT><REQ-IF-CONTENT><DATATYPES/><SPEC-TYPES/><SPEC-OBJECTS/><SPEC-RELATIONS/><SPECIFICATIONS/><SPEC-RELATION-GROUPS/></REQ-IF-CONTENT></CORE-CONTENT></REQ-IF>`;
+
+    const buf = zipSync({
+      'data.reqif':      enc.encode(makeReqif('from-plain')),
+      'data.reqif.orig': enc.encode(makeReqif('from-orig')),
+    }).buffer;
+
+    const doc = await parseReqIfFile(buf as ArrayBuffer, 'both.reqifz');
+    expect(doc.header.identifier).toBe('from-orig');
+  });
 });

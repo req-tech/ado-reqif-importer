@@ -1,57 +1,42 @@
-import * as SDK from 'azure-devops-extension-sdk';
 import type { MappingProfile } from '../models/mapping';
 
-const COLLECTION = 'reqif-mapping-profiles';
-
-// ---------------------------------------------------------------------------
-// Internal: get the ADO Extension Data Service
-// ---------------------------------------------------------------------------
-
-interface ExtensionDataService {
-  getDocuments(collection: string): Promise<unknown[]>;
-  getDocument(collection: string, id: string): Promise<unknown>;
-  setDocument(collection: string, doc: object): Promise<unknown>;
-  deleteDocument(collection: string, id: string): Promise<void>;
+/**
+ * Trigger a browser download of the mapping profile as a JSON file.
+ * @param fileName Optional filename override (without .json extension).
+ */
+export function exportProfile(profile: MappingProfile, fileName?: string): void {
+  const json = JSON.stringify(profile, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  const baseName = fileName?.trim() || profile.displayName || 'mapping-config';
+  const safeName = baseName.replace(/[^a-z0-9_-]/gi, '_');
+  a.download = `${safeName}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
-async function getDataService(): Promise<ExtensionDataService> {
-  // SDK.CommonServiceIds.ExtensionDataService is 'ms.vss-features.extension-data-service'
-  const svc = await SDK.getService<ExtensionDataService>(
-    'ms.vss-features.extension-data-service'
-  );
-  return svc;
-}
-
-// ---------------------------------------------------------------------------
-// Public API
-// ---------------------------------------------------------------------------
-
-/** Retrieve all saved mapping profiles. */
-export async function listProfiles(): Promise<MappingProfile[]> {
-  const svc = await getDataService();
-  const docs = await svc.getDocuments(COLLECTION);
-  return docs as MappingProfile[];
-}
-
-/** Retrieve a single profile by id, or null if not found. */
-export async function loadProfile(id: string): Promise<MappingProfile | null> {
-  const svc = await getDataService();
+/**
+ * Parse a JSON file selected by the user as a MappingProfile.
+ * Throws with a descriptive message if the file is invalid.
+ */
+export async function importProfileFromFile(file: File): Promise<MappingProfile> {
+  const text = await file.text();
+  let data: unknown;
   try {
-    const doc = await svc.getDocument(COLLECTION, id);
-    return doc as MappingProfile;
+    data = JSON.parse(text);
   } catch {
-    return null;
+    throw new Error('File is not valid JSON.');
   }
-}
-
-/** Create or update a mapping profile. */
-export async function saveProfile(profile: MappingProfile): Promise<void> {
-  const svc = await getDataService();
-  await svc.setDocument(COLLECTION, profile);
-}
-
-/** Delete a mapping profile by id. */
-export async function deleteProfile(id: string): Promise<void> {
-  const svc = await getDataService();
-  await svc.deleteDocument(COLLECTION, id);
+  if (
+    typeof data !== 'object' ||
+    data === null ||
+    !Array.isArray((data as Record<string, unknown>).typeMappings)
+  ) {
+    throw new Error('Invalid mapping config: missing typeMappings array.');
+  }
+  return data as MappingProfile;
 }

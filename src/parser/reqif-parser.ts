@@ -4,6 +4,7 @@ import type {
   SpecType,
   AttributeDefinition,
   ReqIfAttributeType,
+  EnumValue,
   SpecObject,
   AttributeValue,
   ParseWarning,
@@ -67,12 +68,17 @@ function parseReqIfXml(xmlText: string): ReqIfDocument {
   const header = extractHeader(headerEls[0]);
 
   // ------------------------------------------------------------------
+  // Datatypes — build enum value lookup before SpecTypes
+  // ------------------------------------------------------------------
+  const enumDatatypes = parseEnumDatatypes(root);
+
+  // ------------------------------------------------------------------
   // SpecTypes
   // ------------------------------------------------------------------
   const specTypes = new Map<string, SpecType>();
   const specTypeEls = root.getElementsByTagName('SPEC-OBJECT-TYPE');
   for (let i = 0; i < specTypeEls.length; i++) {
-    const st = extractSpecType(specTypeEls[i]);
+    const st = extractSpecType(specTypeEls[i], enumDatatypes);
     specTypes.set(st.identifier, st);
   }
 
@@ -119,7 +125,7 @@ function extractHeader(el: Element): ReqIfHeader {
 // SpecType extraction
 // ---------------------------------------------------------------------------
 
-function extractSpecType(el: Element): SpecType {
+function extractSpecType(el: Element, enumDatatypes: Map<string, EnumValue[]>): SpecType {
   const identifier = el.getAttribute('IDENTIFIER') ?? '';
   const longName = el.getAttribute('LONG-NAME') ?? '';
   const attributeDefinitions = new Map<string, AttributeDefinition>();
@@ -130,7 +136,7 @@ function extractSpecType(el: Element): SpecType {
     for (let i = 0; i < children.length; i++) {
       const node = children[i];
       if (node.nodeType !== 1) continue; // element nodes only
-      const ad = extractAttributeDefinition(node as Element);
+      const ad = extractAttributeDefinition(node as Element, enumDatatypes);
       if (ad) {
         attributeDefinitions.set(ad.identifier, ad);
       }
@@ -150,17 +156,29 @@ const TAG_TO_TYPE: Record<string, ReqIfAttributeType> = {
   'ATTRIBUTE-DEFINITION-ENUMERATION': 'ENUMERATION',
 };
 
-function extractAttributeDefinition(el: Element): AttributeDefinition | null {
+function extractAttributeDefinition(el: Element, enumDatatypes: Map<string, EnumValue[]>): AttributeDefinition | null {
   const tagName = el.tagName.toUpperCase();
   const type: ReqIfAttributeType = TAG_TO_TYPE[tagName] ?? 'UNKNOWN';
   const identifier = el.getAttribute('IDENTIFIER');
   if (!identifier) return null;
 
+  let enumValues: EnumValue[] | undefined;
+  let isMultiValued: boolean | undefined;
+
+  if (type === 'ENUMERATION') {
+    // Follow TYPE/DATATYPE-DEFINITION-ENUMERATION-REF to resolve human-readable names
+    const refEls = el.getElementsByTagName('DATATYPE-DEFINITION-ENUMERATION-REF');
+    const datatypeRef = refEls.length > 0 ? refEls[0].textContent?.trim() : undefined;
+    enumValues = datatypeRef ? (enumDatatypes.get(datatypeRef) ?? []) : [];
+    isMultiValued = el.getAttribute('MULTI-VALUED') === 'true' || undefined;
+  }
+
   return {
     identifier,
     longName: el.getAttribute('LONG-NAME') ?? '',
     type,
-    isMultiValued: el.getAttribute('MULTI-VALUED') === 'true' || undefined,
+    enumValues,
+    isMultiValued,
   };
 }
 
@@ -230,6 +248,41 @@ function getAttrDefinitionRef(valueEl: Element): string | null {
 }
 
 // ---------------------------------------------------------------------------
+// Datatypes extraction
+// ---------------------------------------------------------------------------
+
+/**
+ * Parse all DATATYPE-DEFINITION-ENUMERATION elements from the document root
+ * and return a map of datatype IDENTIFIER → EnumValue[].
+ * This map is used to resolve ENUM-VALUE-REF identifiers to human-readable names.
+ */
+function parseEnumDatatypes(root: Element): Map<string, EnumValue[]> {
+  const result = new Map<string, EnumValue[]>();
+  const defs = root.getElementsByTagName('DATATYPE-DEFINITION-ENUMERATION');
+  for (let i = 0; i < defs.length; i++) {
+    const def = defs[i];
+    const id = def.getAttribute('IDENTIFIER');
+    if (!id) continue;
+    const values: EnumValue[] = [];
+    const enumEls = def.getElementsByTagName('ENUM-VALUE');
+    for (let j = 0; j < enumEls.length; j++) {
+      const ev = enumEls[j];
+      const evId = ev.getAttribute('IDENTIFIER');
+      if (!evId) continue;
+      const keyEls = ev.getElementsByTagName('EMBEDDED-VALUE');
+      const key = keyEls.length > 0 ? parseInt(keyEls[0].getAttribute('KEY') ?? '0', 10) : j;
+      values.push({
+        identifier: evId,
+        longName: ev.getAttribute('LONG-NAME') ?? evId,
+        key,
+      });
+    }
+    result.set(id, values);
+  }
+  return result;
+}
+
+// ---------------------------------------------------------------------------
 // .reqifz decompression
 // ---------------------------------------------------------------------------
 
@@ -245,9 +298,13 @@ async function decompressReqIfz(buffer: ArrayBuffer): Promise<ArrayBuffer> {
     );
   }
 
-  const reqifEntry = Object.entries(entries).find(([name]) =>
-    name.toLowerCase().endsWith('.reqif')
-  );
+  // Prefer the unmodified full export (*.reqif.orig) when present; fall back
+  // to the first *.reqif entry.  Some tools package a trimmed preview as
+  // .reqif alongside the complete dataset as .reqif.orig.
+  const allEntries = Object.entries(entries);
+  const reqifEntry =
+    allEntries.find(([name]) => name.toLowerCase().endsWith('.reqif.orig')) ??
+    allEntries.find(([name]) => name.toLowerCase().endsWith('.reqif'));
 
   if (!reqifEntry) {
     throw new Error(

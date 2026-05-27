@@ -1,62 +1,87 @@
 /* ImportStep.css */
 
 .import-step {
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.import-step__body {
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.import-step__header {
-  font-size: 16px;
-  font-weight: 600;
-}
-
 .import-step__summary {
   font-size: 13px;
-  color: var(--text-secondary, #555);
-}
-
-.import-step__actions {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.import-step__execute-btn {
-  padding: 6px 16px;
-  background-color: var(--communication-foreground, #0078d4);
-  color: #fff;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.import-step__execute-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+  color: #605e5c;
 }
 
 .import-step__log {
-  list-style: none;
   margin: 0;
-  padding: 8px;
-  background: var(--neutral-10, #f3f2f1);
-  border: 1px solid var(--neutral-20, #edebe9);
+  padding: 8px 12px;
+  background: #f3f2f1;
+  border: 1px solid #edebe9;
   border-radius: 2px;
-  max-height: 200px;
+  max-height: 280px;
   overflow-y: auto;
   font-size: 12px;
-  font-family: monospace;
+  font-family: 'Cascadia Code', 'Cascadia Mono', Consolas, 'Courier New', monospace;
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 .import-step__log-entry {
-  padding: 2px 0;
+  display: flex;
+  gap: 8px;
+  padding: 1px 0;
 }
 
-.import-step__log-entry--error {
-  color: #a4262c;
+.import-step__log-entry--info  { color: #107c10; }
+.import-step__log-entry--warning { color: #797673; }
+.import-step__log-entry--error { color: #a4262c; }
+
+.import-step__log-time {
+  flex-shrink: 0;
+  color: #a19f9d;
+  user-select: none;
+}
+
+.import-step__log-reqif {
+  flex-shrink: 0;
+  min-width: 7em;
+  color: #605e5c;
+}
+
+.import-step__log-msg {
+  overflow-wrap: anywhere;
+}
+
+.import-step__report-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.import-step__report-counts {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.import-step__save-bar {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #edebe9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.import-step__save-bar strong {
+  font-size: 13px;
+  color: #605e5c;
 }
 
 .import-step__report {
@@ -76,9 +101,16 @@
   font-size: 13px;
 }
 
+.import-step__count--created { color: #107c10; font-weight: 600; }
+.import-step__count--updated { color: #0078d4; font-weight: 600; }
+.import-step__count--failed  { color: #a4262c; font-weight: 600; }
+
 .import-step__report-section {
   font-size: 13px;
 }
+
+.import-step__report-section--warning h4 { color: #797673; }
+.import-step__report-section--error h4   { color: #a4262c; }
 
 .import-step__report-section h4 {
   margin: 0 0 4px;
@@ -93,4 +125,17 @@
 
 .import-step__failed-item {
   color: #a4262c;
+  display: flex;
+  gap: 6px;
+}
+
+.import-step__failed-reqif {
+  flex-shrink: 0;
+  font-family: 'Cascadia Code', Consolas, monospace;
+  font-size: 11px;
+  color: #605e5c;
+}
+
+.import-step__failed-msg {
+  overflow-wrap: anywhere;
 }

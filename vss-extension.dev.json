@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "ado-reqif-importer-dev",
-    "publisher": "req-tech",
+    "publisher": "ByteCorporation",
     "version": "1.0.0",
     "name": "ReqIF Importer (Dev)",
     "description": "ReqIF Importer — development build served from localhost.",

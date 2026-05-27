@@ -1,111 +1,81 @@
-import React, { useEffect, useState } from 'react';
-import type { MappingProfile } from '../../models/mapping';
-import type { TypeMapping } from '../../models/mapping';
-import { listProfiles, saveProfile, deleteProfile } from '../../services/storage-service';
+import React, { useRef, useState } from 'react';
+import type { MappingProfile, TypeMapping } from '../../models/mapping';
+import { exportProfile, importProfileFromFile } from '../../services/storage-service';
 import './ProfileSelector.css';
 
 interface Props {
   currentMappings: TypeMapping[];
+  fieldDefaults?: Record<string, string>;
   onProfileLoaded: (profile: MappingProfile) => void;
 }
 
-const ProfileSelector: React.FC<Props> = ({ currentMappings, onProfileLoaded }) => {
-  const [profiles, setProfiles] = useState<MappingProfile[]>([]);
-  const [selectedId, setSelectedId] = useState<string>('');
-  const [saveName, setSaveName] = useState<string>('');
-  const [showSaveInput, setShowSaveInput] = useState(false);
-  const [confirmDelete, setConfirmDelete] = useState(false);
+const ProfileSelector: React.FC<Props> = ({ currentMappings, fieldDefaults, onProfileLoaded }) => {
+  const fileRef = useRef<HTMLInputElement>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [exportName, setExportName] = useState<string>('');
 
-  useEffect(() => {
-    listProfiles().then(setProfiles).catch(() => {});
-  }, []);
-
-  const handleLoad = () => {
-    const profile = profiles.find((p) => p.id === selectedId);
-    if (profile) onProfileLoaded(profile);
-  };
-
-  const handleSave = async () => {
-    if (!saveName.trim()) return;
+  const handleExport = () => {
     const now = new Date().toISOString();
-    const existing = profiles.find((p) => p.displayName === saveName.trim());
     const profile: MappingProfile = {
-      id: existing?.id ?? `profile-${Date.now()}`,
-      displayName: saveName.trim(),
-      createdAt: existing?.createdAt ?? now,
+      id: `profile-${Date.now()}`,
+      displayName: exportName.trim() || 'mapping-config',
+      createdAt: now,
       updatedAt: now,
-      reqIfIdentifierField: existing?.reqIfIdentifierField ?? 'Custom.ReqIFIdentifier',
+      reqIfIdentifierField: 'Custom.ReqIFIdentifier',
       typeMappings: currentMappings,
+      ...(fieldDefaults && Object.keys(fieldDefaults).length > 0 ? { fieldDefaults } : {}),
     };
-    await saveProfile(profile);
-    const updated = await listProfiles();
-    setProfiles(updated);
-    setSelectedId(profile.id);
-    setSaveName('');
-    setShowSaveInput(false);
+    exportProfile(profile, exportName.trim() || undefined);
   };
 
-  const handleDelete = async () => {
-    if (!selectedId) return;
-    await deleteProfile(selectedId);
-    const updated = await listProfiles();
-    setProfiles(updated);
-    setSelectedId('');
-    setConfirmDelete(false);
+  const handleImport = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setError(null);
+    try {
+      const profile = await importProfileFromFile(file);
+      onProfileLoaded(profile);
+    } catch (err) {
+      setError((err instanceof Error) ? err.message : String(err));
+    } finally {
+      if (fileRef.current) fileRef.current.value = '';
+    }
   };
 
   return (
     <div className="profile-selector">
-      <label htmlFor="profile-dropdown">Saved Profiles</label>
+      <span className="profile-selector__label">Mapping Config</span>
       <div className="profile-row">
-        <select
-          id="profile-dropdown"
-          value={selectedId}
-          onChange={(e) => setSelectedId(e.target.value)}
-          aria-label="Select saved profile"
-        >
-          <option value="">— New / unsaved —</option>
-          {profiles.map((p) => (
-            <option key={p.id} value={p.id}>
-              {p.displayName}
-            </option>
-          ))}
-        </select>
-        <button onClick={handleLoad} disabled={!selectedId} aria-label="Load profile">
-          Load
+        <input
+          type="text"
+          className="profile-selector__filename"
+          placeholder="File name (optional)"
+          value={exportName}
+          onChange={(e) => setExportName(e.target.value)}
+          aria-label="Export file name"
+        />
+        <button type="button" onClick={handleExport} aria-label="Export mapping config as JSON">
+          ⬇ Export JSON
         </button>
         <button
-          onClick={() => setShowSaveInput((v) => !v)}
-          aria-label="Save profile as"
+          type="button"
+          onClick={() => fileRef.current?.click()}
+          aria-label="Import mapping config from JSON"
         >
-          Save As…
+          ⬆ Import JSON
         </button>
-        {selectedId && (
-          confirmDelete ? (
-            <>
-              <span>Delete "{profiles.find((p) => p.id === selectedId)?.displayName}"?</span>
-              <button onClick={handleDelete} aria-label="Confirm delete">Yes</button>
-              <button onClick={() => setConfirmDelete(false)} aria-label="Cancel delete">No</button>
-            </>
-          ) : (
-            <button onClick={() => setConfirmDelete(true)} aria-label="Delete profile">
-              Delete
-            </button>
-          )
-        )}
+        <input
+          ref={fileRef}
+          type="file"
+          accept=".json,application/json"
+          onChange={handleImport}
+          style={{ display: 'none' }}
+          aria-label="Select mapping config file"
+        />
       </div>
-      {showSaveInput && (
-        <div className="profile-save-input">
-          <input
-            type="text"
-            placeholder="Profile name"
-            value={saveName}
-            onChange={(e) => setSaveName(e.target.value)}
-            aria-label="Profile name"
-          />
-          <button onClick={handleSave} aria-label="Confirm save profile">
-            Save
-          </button>
+      {error && (
+        <div className="profile-selector__error" role="alert">
+          {error}
         </div>
       )}
     </div>

@@ -14,6 +14,8 @@ export interface AdoFieldDefinition {
   referenceName: string; // e.g., "System.Title"
   type: AdoFieldType;
   isRequired: boolean;
+  /** Allowed values for picklist/state fields (empty array if unrestricted) */
+  allowedValues?: string[];
 }
 
 export type AdoFieldType =

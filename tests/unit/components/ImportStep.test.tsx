@@ -9,6 +9,16 @@ import * as WizardContext from '../../../src/context/wizard-context';
 import type { WizardState } from '../../../src/context/wizard-context';
 import type { ImportPreview } from '../../../src/models/preview';
 import type { ImportReport } from '../../../src/models/report';
+import type { ReqIfDocument } from '../../../src/parser/reqif-types';
+
+const mockDoc: ReqIfDocument = {
+  header: { identifier: 'h1', title: 'T', creationTime: '', reqIfVersion: '1.0' },
+  specTypes: new Map(),
+  specObjects: new Map(),
+  specObjectCount: 5,
+  specObjectOrder: ['OBJ-1', 'OBJ-2', 'OBJ-3', 'OBJ-4', 'OBJ-5'],
+  parseWarnings: [],
+};
 
 // ---------------------------------------------------------------------------
 // Mocks
@@ -44,6 +54,7 @@ function makePreview(): ImportPreview {
 const mockReport: ImportReport = {
   completedAt: '2024-01-01T00:00:00Z',
   totalCreated: 5,
+  totalUpdated: 0,
   totalSkipped: 0,
   totalFailed: 0,
   createdItems: Array.from({ length: 5 }, (_, i) => ({
@@ -53,6 +64,7 @@ const mockReport: ImportReport = {
     workItemUrl: `https://dev.azure.com/work/${i + 100}`,
     workItemType: 'Requirement',
   })),
+  updatedItems: [],
   skippedItems: [],
   failedItems: [],
   allWarnings: [],
@@ -66,7 +78,7 @@ function renderWithContext(statePatch?: Partial<WizardState>) {
   const dispatch = jest.fn();
   const state: WizardState = {
     currentStep: 'import',
-    parsedDocument: null,
+    parsedDocument: mockDoc,
     mappingProfile: {
       id: 'p1',
       displayName: 'Test',
@@ -81,6 +93,7 @@ function renderWithContext(statePatch?: Partial<WizardState>) {
     importStatus: null,
     importReport: null,
     globalError: null,
+    fieldDefaults: {},
     ...statePatch,
   };
 
@@ -95,9 +108,10 @@ function renderWithContext(statePatch?: Partial<WizardState>) {
 describe('ImportStep', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    (window as unknown as Record<string, unknown>).__ADO_PROJECT__ = 'test-project';
     mockExecuteImport.mockImplementation(
       async (_preview: unknown, _profile: unknown, _project: unknown, onProgress: (s: unknown) => void) => {
-        onProgress({ phase: 'running', totalItems: 5, processedItems: 1, createdItems: 1, skippedItems: 0, failedItems: 0, logEntries: [] });
+        onProgress({ phase: 'running', totalItems: 5, processedItems: 1, createdItems: 1, updatedItems: 0, skippedItems: 0, failedItems: 0, logEntries: [{ timestamp: new Date().toISOString(), level: 'info', message: '✓ Created #1 — Test item' }] });
         return mockReport;
       }
     );
@@ -105,12 +119,12 @@ describe('ImportStep', () => {
 
   it('renders Execute button', () => {
     const { result } = renderWithContext();
-    expect(result.getByRole('button', { name: /execute/i })).toBeTruthy();
+    expect(result.getByRole('button', { name: /run import/i })).toBeTruthy();
   });
 
   it('triggers executeImport when Execute button is clicked', async () => {
     const { result } = renderWithContext();
-    fireEvent.click(result.getByRole('button', { name: /execute/i }));
+    fireEvent.click(result.getByRole('button', { name: /run import/i }));
     await waitFor(() => {
       expect(mockExecuteImport).toHaveBeenCalledTimes(1);
     });
@@ -118,7 +132,7 @@ describe('ImportStep', () => {
 
   it('shows status log during import', async () => {
     const { result } = renderWithContext();
-    fireEvent.click(result.getByRole('button', { name: /execute/i }));
+    fireEvent.click(result.getByRole('button', { name: /run import/i }));
     await waitFor(() => {
       expect(result.getByRole('log')).toBeTruthy();
     });
@@ -126,7 +140,7 @@ describe('ImportStep', () => {
 
   it('shows final report with created count after completion', async () => {
     const { result } = renderWithContext();
-    fireEvent.click(result.getByRole('button', { name: /execute/i }));
+    fireEvent.click(result.getByRole('button', { name: /run import/i }));
     await waitFor(() => {
       expect(result.getByText(/Created: 5/)).toBeTruthy();
     });
@@ -146,12 +160,12 @@ describe('ImportStep', () => {
     };
     mockExecuteImport.mockImplementation(
       async (_p: unknown, _pr: unknown, _proj: unknown, onProgress: (s: unknown) => void) => {
-        onProgress({ phase: 'running', totalItems: 5, processedItems: 1, createdItems: 0, skippedItems: 0, failedItems: 1, logEntries: [] });
+        onProgress({ phase: 'running', totalItems: 5, processedItems: 1, createdItems: 0, updatedItems: 0, skippedItems: 0, failedItems: 1, logEntries: [] });
         return failedReport;
       }
     );
     const { result } = renderWithContext();
-    fireEvent.click(result.getByRole('button', { name: /execute/i }));
+    fireEvent.click(result.getByRole('button', { name: /run import/i }));
     await waitFor(() => {
       expect(result.getByText(/Connection refused/)).toBeTruthy();
     });

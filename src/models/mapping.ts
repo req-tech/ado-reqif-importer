@@ -12,6 +12,8 @@ export interface MappingProfile {
   reqIfIdentifierField: string; // e.g., "Custom.ReqIFIdentifier"
   /** One TypeMapping per ReqIF SpecType */
   typeMappings: TypeMapping[];
+  /** Default field values for required ADO fields not covered by attribute mappings. key = field ref name */
+  fieldDefaults?: Record<string, string>;
 }
 
 /** Maps one ReqIF SpecType to one ADO Work Item type */
@@ -38,4 +40,14 @@ export interface AttributeMapping {
   adoFieldName: string;
   /** Whether this mapping is enabled (user can toggle off individual attrs) */
   enabled: boolean;
+  /** Value-level mappings for ENUMERATION attributes */
+  enumValueMappings?: EnumValueMapping[];
+}
+
+/** Maps one ReqIF enum value name to the corresponding ADO field value */
+export interface EnumValueMapping {
+  /** Human-readable name from the ReqIF ENUM-VALUE LONG-NAME */
+  reqIfEnumValueName: string;
+  /** ADO field value to set (e.g. "2" for priority, "Active" for state) */
+  adoValue: string;
 }

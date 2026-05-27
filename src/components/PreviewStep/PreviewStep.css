@@ -1,8 +1,19 @@
 .preview-step {
-  padding: 16px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0;
+}
+
+/* ---- Scrollable content below the bar ---- */
+.preview-step > .preview-header,
+.preview-step > .preview-warnings,
+.preview-step > .preview-table {
+  padding: 0 20px;
+}
+
+.preview-step > .preview-header {
+  padding-top: 16px;
 }
 
 .preview-header {
@@ -13,7 +24,8 @@
 }
 
 .preview-total {
-  font-size: 1rem;
+  font-size: 14px;
+  color: #605e5c;
 }
 
 .preview-warnings {
@@ -24,56 +36,89 @@
 
 .preview-warning {
   padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .preview-warning--error {
   background: #fde7e9;
-  color: #c50f1f;
-  border: 1px solid #c50f1f;
+  color: #a4262c;
+  border-left: 4px solid #c50f1f;
 }
 
 .preview-warning--warning {
   background: #fff4ce;
-  color: #835b00;
-  border: 1px solid #835b00;
+  color: #7a5800;
+  border-left: 4px solid #c19c00;
+}
+
+.preview-warning__message {
+  margin-bottom: 4px;
+}
+
+.preview-warning__default {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.preview-warning__default label {
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.preview-warning__default input,
+.preview-warning__default select {
+  flex: 1;
+  max-width: 360px;
+  padding: 4px 7px;
+  border: 1px solid #c8c6c4;
+  border-radius: 2px;
+  background: #fff;
+  font-size: 13px;
 }
 
 .preview-warning--info {
   background: #deecf9;
   color: #004578;
-  border: 1px solid #004578;
+  border-left: 4px solid #0078d4;
 }
 
 .preview-table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 13px;
 }
 
 .preview-table th,
 .preview-table td {
   padding: 8px 12px;
-  border: 1px solid #edebe9;
+  border-bottom: 1px solid #edebe9;
   text-align: left;
 }
 
 .preview-table th {
   background: #f3f2f1;
   font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #605e5c;
+  border-top: 1px solid #edebe9;
+}
+
+.preview-table tbody tr:hover {
+  background: #f8f8f8;
 }
 
 .op-create {
-  color: #0e7a0d;
+  color: #107c10;
   font-weight: 600;
 }
 
 .op-skip {
   color: #a19f9d;
-}
-
-.preview-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
 }

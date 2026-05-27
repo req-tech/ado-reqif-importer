@@ -9,7 +9,7 @@ import type { ImportStatus, ImportReport } from '../models/report';
 // Step type
 // ---------------------------------------------------------------------------
 
-export type WizardStep = 'upload' | 'mapping' | 'preview' | 'import';
+export type WizardStep = 'upload' | 'mapping' | 'valuemapping' | 'preview' | 'import';
 
 // ---------------------------------------------------------------------------
 // State
@@ -25,6 +25,8 @@ export interface WizardState {
   importStatus: ImportStatus | null;
   importReport: ImportReport | null;
   globalError: string | null;
+  /** Default values for required ADO fields not covered by attribute mappings. key = field ref name */
+  fieldDefaults: Record<string, string>;
 }
 
 const initialState: WizardState = {
@@ -37,6 +39,7 @@ const initialState: WizardState = {
   importStatus: null,
   importReport: null,
   globalError: null,
+  fieldDefaults: {},
 };
 
 // ---------------------------------------------------------------------------
@@ -53,7 +56,8 @@ export type WizardAction =
   | { type: 'SET_IMPORT_STATUS'; status: ImportStatus }
   | { type: 'SET_IMPORT_REPORT'; report: ImportReport }
   | { type: 'SET_ERROR'; message: string }
-  | { type: 'CLEAR_ERROR' };
+  | { type: 'CLEAR_ERROR' }
+  | { type: 'SET_FIELD_DEFAULT'; fieldRefName: string; value: string };
 
 // ---------------------------------------------------------------------------
 // Reducer
@@ -66,7 +70,11 @@ export function wizardReducer(state: WizardState, action: WizardAction): WizardS
     case 'SET_PARSED_DOCUMENT':
       return { ...state, parsedDocument: action.document };
     case 'SET_MAPPING_PROFILE':
-      return { ...state, mappingProfile: action.profile };
+      return {
+        ...state,
+        mappingProfile: action.profile,
+        fieldDefaults: { ...action.profile.fieldDefaults },
+      };
     case 'SET_SAVED_PROFILES':
       return { ...state, savedProfiles: action.profiles };
     case 'SET_ADO_WORK_ITEM_TYPES':
@@ -81,6 +89,16 @@ export function wizardReducer(state: WizardState, action: WizardAction): WizardS
       return { ...state, globalError: action.message };
     case 'CLEAR_ERROR':
       return { ...state, globalError: null };
+    case 'SET_FIELD_DEFAULT': {
+      const newDefaults = { ...state.fieldDefaults, [action.fieldRefName]: action.value };
+      return {
+        ...state,
+        fieldDefaults: newDefaults,
+        mappingProfile: state.mappingProfile
+          ? { ...state.mappingProfile, fieldDefaults: newDefaults }
+          : state.mappingProfile,
+      };
+    }
     default:
       return state;
   }

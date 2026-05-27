@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "ado-reqif-importer",
-    "publisher": "req-tech",
+    "publisher": "ByteCorporation",
     "version": "1.0.0",
     "name": "ReqIF Importer",
     "description": "Import requirements from ReqIF (.reqif, .reqifz) files into Azure DevOps Work Items — browser-only, no backend required.",

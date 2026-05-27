@@ -1,41 +1,123 @@
 .mapping-step {
-  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 
-.mapping-warning {
-  color: #d83b01;
+/* ---- Sticky top bar ---- */
+.mapping-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #f3f2f1;
+  border-bottom: 1px solid #c8c6c4;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mapping-topbar__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mapping-topbar__row--controls {
+  justify-content: space-between;
+}
+
+/* ---- Sample item selector ---- */
+.mapping-sample-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.mapping-sample-controls label {
+  color: #605e5c;
   font-weight: 500;
 }
 
-.mapping-table,
-.attr-mapping-table {
-  width: 100%;
-  border-collapse: collapse;
+.mapping-sample-controls input {
+  width: 90px;
 }
 
-.mapping-table th,
-.mapping-table td,
-.attr-mapping-table th,
-.attr-mapping-table td {
-  padding: 8px 12px;
-  border: 1px solid #edebe9;
-  text-align: left;
-}
-
-.mapping-table th,
-.attr-mapping-table th {
-  background: #f3f2f1;
-  font-weight: 600;
-}
-
+/* ---- Save / Next buttons ---- */
 .mapping-actions {
   display: flex;
   gap: 8px;
-  justify-content: flex-end;
-  margin-top: 8px;
+}
+
+/* ---- Main mapping table ---- */
+.mapping-table {
+  border-collapse: collapse;
+  margin: 16px 20px;
+  width: calc(100% - 40px);
+  font-size: 13px;
+}
+
+.mapping-table th,
+.mapping-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid #edebe9;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.mapping-table th {
+  background: #f3f2f1;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #605e5c;
+  border-top: 1px solid #edebe9;
+}
+
+.mapping-table tbody tr:hover > td {
+  background: #faf9f8;
+}
+
+/* ---- Attribute sub-table ---- */
+.attr-mapping-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  background: #faf9f8;
+}
+
+.attr-mapping-table th,
+.attr-mapping-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #f0eeec;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.attr-mapping-table th {
+  font-size: 11px;
+  font-weight: 600;
+  color: #605e5c;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: #f0eeec;
+}
+
+.attr-mapping-table tbody tr:hover > td {
+  background: #edecea;
+}
+
+.attr-example {
+  max-width: 380px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #605e5c;
+  font-style: italic;
+  font-size: 12px;
 }
 
 select {

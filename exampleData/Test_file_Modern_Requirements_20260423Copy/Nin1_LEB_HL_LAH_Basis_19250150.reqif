@@ -1,0 +1,2508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<REQ-IF xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd" xmlns:configuration="http://eclipse.org/rmf/pror/toolextensions/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <THE-HEADER>
+    <REQ-IF-HEADER IDENTIFIER="_1ec8fda2-a6ed-421e-b53a-8e41674053ac">
+      <COMMENT></COMMENT>
+      <CREATION-TIME>2025-12-18T14:06:41.000+01:00</CREATION-TIME>
+      <REQ-IF-TOOL-ID>ReqIF Studio (https://reqif.academy)</REQ-IF-TOOL-ID>
+      <REQ-IF-VERSION>1.0</REQ-IF-VERSION>
+      <SOURCE-TOOL-ID>integrity.version=13.2.0.4;client.integration=true;integrity.build=2;integrity.api-version=4.16.2</SOURCE-TOOL-ID>
+      <TITLE>Nin1_LEB_HL_LAH_Basis</TITLE>
+    </REQ-IF-HEADER>
+  </THE-HEADER>
+  <CORE-CONTENT>
+    <REQ-IF-CONTENT>
+      <DATATYPES>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_266042e4-0195-4d43-a138-670c1eab1896" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Text"/>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_01c60f0f-72fb-4dc0-8fe2-bf0b17fbdf31" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kategorie">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_f47ace98-290f-4967-9abb-39806afe51e8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Überschrift">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="20" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_aaa1ba64-f928-4220-80d4-9801308ea8ff" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Information">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="207" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_3b86f2b7-9744-44f8-8c3c-2bf07381f4ab" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Funktionale Anforderung">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="214" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_ded8839a-d6a6-4f3f-954d-b0ccc627fc45" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Nicht-funktionale Anforderung">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="215" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_3d2760c4-3249-4eb7-a862-c4757d24bdd8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Stakeholder-Bedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="216" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_43de3d16-2021-4b50-b56e-f55b8acdeb98" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Stakeholder-Anforderung">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="413" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_268a8258-2498-4531-9edc-ce8d40b81b15" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgabe">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="412" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-INTEGER IDENTIFIER="_b5c25608-c081-4e36-bfd5-200931bb8436" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Item ID" MAX="2147483647" MIN="-2147483648"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_32ddd88b-8d24-4bcd-8d50-07f39b38c491" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Shared Text übersetzt"/>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_391af5c7-a7e5-47c2-9253-436ad4ebb1cf" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant A">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_1472f3dc-289e-4d81-a47b-64c0ad1dc2f6" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_17253547-16da-4ecf-8e8e-c9d6d30d7058" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_756823a8-d946-4c6d-af31-f39d80977d2f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_6613501d-29dd-48f3-9a77-a7bd82fbad02" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_946dcfce-3953-4348-a926-f5d76d210655" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_b6ed6f5a-7fd5-40b3-a21b-f5c6a625f862" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant B">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_988f5074-ce8f-4bc2-982f-e74f764f96fa" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_fd320d82-1a93-4802-98f5-b2250ca0f024" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e90f5ed6-6d4e-43a8-aca1-141081587c5d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_393cd280-604b-41dd-a9f3-aeabb261f8fb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_3d0c620a-7fd4-441e-a486-9997db8a38d7" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_9e5dff61-1ac1-4f8e-8896-b50f1e3c5d71" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant C">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_27483563-0e3d-4139-9b3d-5251036c7c6d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_68b3076e-eb7b-469a-8446-e4be7a3c5d6e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_ef1e0b7c-d508-4682-83f2-c2fe1dd0e328" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_780ca47f-669a-4476-b598-03dd7151ecd2" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_06b31305-0d03-40bc-a41c-9907e9117bb2" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_34d24de6-2df5-43b5-bc1c-fbfb1486e999" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant D">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_e0d748fd-c8cc-4049-bb83-87a115d3705f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_02f60e2b-44b6-4186-ab24-1b762568488d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_b51389ef-bf12-4c2b-8323-a66ce3b20ef0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_c471cb10-9ac2-4e51-8e81-8183e53d5ef7" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_6038103d-b7df-4c21-acea-df702c0f51ce" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_a1df452b-32a1-42f0-9719-e5884f30c6fd" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant E">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_8474d250-bfb1-443a-939a-904b3d439139" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_c704faae-bd93-4bca-8c10-fe6981d0f1b9" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_c3941f79-ce72-4cf6-9155-6ae174495dae" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_0b80aedd-2994-4d38-bce2-305a39b8c385" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_363b2087-3993-4538-af71-9abe41cd9d08" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_617cadfb-912a-4f22-95be-b9598b5a60ee" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant F">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_1f0a1baf-d1f6-4d5c-a77f-133502a21812" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_73d85642-dc05-4c97-b2c5-5ccee60e86d0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_1695b0f3-6d55-4edb-9568-d69acd1a6cbb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_a9a3c5f0-e7c7-477f-b4c3-f32ae853c4e4" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_eb4d936a-99be-480f-89a4-8ca81fe906c1" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_344cbf29-a862-463f-a2e6-7ad14c5c5167" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant G">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_4c9d86a6-e8f4-4587-8901-e9708d6eedd0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_06c2a751-c4b7-49ef-a0bb-94580327957a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_078335ab-0531-4a17-931a-a0733cb4da79" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_2852ae24-013e-46a3-9b45-6262c6bb993a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_aa1094e8-fb13-4788-a0d2-ec92595e8383" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_d53cb43c-a937-4f76-bc10-72b9df3a24d2" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant H">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_840c7dc3-3e6c-428e-8392-b4290537c86a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_1ccb697e-4aaa-4ee5-a51a-f2465e179889" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_742f3c04-8a0a-4002-b9f6-990ad20f5b59" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_a574d9df-c924-4564-843a-84a55fbe81eb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_6a160c3d-283f-453d-95fe-dd85baaf1877" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_1b8fea67-c2ec-4e27-9306-2c7372e76290" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant I">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_7bbea93f-6759-478d-99ac-d73a6df6907d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_265623a8-f1dd-4df9-8062-d305da455ddf" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_b2b28ced-ed9e-4614-9c64-090a18aa8372" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_53384c66-68bf-4ea0-a458-899116f58ff4" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_53586274-bd03-4a52-8426-3349448a8b6b" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_02ad6833-2088-4753-9a52-195aa6bcbde0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant J">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_d49aec85-3154-40ed-895a-80947dad2102" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_441fc595-6ad5-4e02-869a-9df662380f1d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_5cb9ea1e-2743-45ca-bd74-fae39e42b705" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_85a023da-2ddd-4343-9556-ac705b2d9fdc" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e78eb3dc-4e9c-4362-9461-ea2f804632bc" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_aaa0a7a2-0ae1-4b96-b4d7-7bb7c0ad6af6" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant K">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_1225d34a-4eb5-48cc-8ea2-dc8a60add030" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_7186944c-1ba3-4e1b-ac49-f280421d1730" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_ced592f2-c3d9-4781-a203-3475fd6e6542" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_05e6dda1-7c85-41cf-9138-54a352d07e42" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_ff019815-3ec9-4c7f-8f96-705f095bb96a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_50f43db1-96ad-47c3-b857-c6efa684e1af" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant L">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_6127210f-538c-42be-aea6-d87b07652182" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_4695f64c-882b-49bd-a907-c5f82d681830" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_5d270a13-290f-45bb-97b9-93eaaf3d6e4f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_50591424-2fb0-4ff4-8a01-2acd3d0a2641" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_3507f5da-b12c-4413-ab83-5fbf3f8b4ada" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_0bfdf50b-c580-4632-b247-978a397e92ab" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant M">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_d71b8b22-4575-40a8-884e-cbc248c2c2c4" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_ddd39431-dd6c-4068-8284-9c031e483fc1" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_db7f290f-11ce-4453-9a40-07d037da075d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_1f006c66-6428-4fcb-96df-c35376490ed0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_5f5c5cd3-2918-4163-918a-5060ba849962" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_7b4faf7a-cbdd-46e7-a034-49021cdbb590" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant N">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_a448af06-bfe2-46e7-8826-3c42e43b9de2" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_7496a9be-8ff1-4386-9201-cf06d44c63c5" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_1354f29b-1f3b-401c-bae4-01285d52b408" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_3618db51-2d1a-4c66-9812-5dda02650570" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e40c7ad8-080b-4d17-bb9e-23e6e9e19a4f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_d14fc9fe-6005-4cbd-9a2b-462729d56333" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant O">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_308db28d-de28-4831-ae5d-68c82be5a9ab" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_0d1bcf4a-6341-4ac7-b51c-4fbff59a27c8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_67156b85-af4f-4530-802d-78e0c8f79eca" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_3eef6a53-9dc1-4189-85c7-c1abe1d80118" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_5f0690ca-7bdf-4411-ae39-dcde3b6bdd67" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_7b638130-0b73-42df-8beb-68a7b920f236" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant P">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_25de8e5f-5280-4b54-9620-fa856e5485ab" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_40760f08-eddf-472c-8598-970187611d1d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_4b0180e9-45ec-4cc6-b0d9-15a280a26b6c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_84c6c3cb-35a7-4181-b1b6-931ccad013ce" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_cc361c0a-7597-4486-9b78-8e667b2d4b21" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_4d82e4d1-7d1b-4fa1-98d2-785770e983f3" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant Q">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_86853d32-2616-46dc-b4d4-04084afd50a0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_5078de6a-a78c-4050-ba3c-bbaf4b0660e0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_cb4febb9-be77-40b5-9408-852e03edacd8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_1ea8e440-fd4f-407f-bf04-fe7b25576fd1" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_f1a00fb1-f34e-4446-a6a1-12af5d97561c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_330635fe-705a-45e6-ad76-06cabc4e60aa" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant R">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_fc85b393-f8c5-4547-ba25-b0fccd8d724e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e6a03d6f-bef3-43d4-a9eb-3e75450c7e55" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_4aa41195-2717-4551-98ca-c8060921aeeb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_ae18aa08-ee8b-44f1-9577-3568f5f7d2fb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_bdb9ca4a-e4b7-4b5e-9be9-a22ae22c0675" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_9d0f0c17-1a02-4d32-bb01-a3fccfbd01a6" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant S">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_fac6a2ab-297a-4b49-8b3e-e7d2e9939d18" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_20ff26a5-f326-4a84-b46c-5ee425649ab3" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_7b31f174-d1e5-43f2-917b-4202b67ee214" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_47d8fcc2-cd1c-4f4a-88e7-b0d791d1deeb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_45313e53-9fa6-422b-b9eb-b0a0dcc44c77" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_c15d77df-8f60-4b65-93e5-32f1d0cab57a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant T">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_b53ecf29-27f5-496b-8dc0-fc617c880a75" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_140ee994-e60c-49c5-8253-398b809f36b4" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_4085fcfb-46b7-4a45-833a-0162388987e4" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_ffe08d64-561f-491d-833d-f5606953b431" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e8322ef4-3287-458f-9eca-0ecfca7e711d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_e4e94d52-7231-4697-b76b-3840e2306e07" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant U">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_3e0de5d2-b2c9-4ca4-9c2c-402b42b05a3a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_009a667d-852a-4cef-9819-ce18857e059d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_8d61dd9f-d4b9-4da9-9a47-8d0a730d0de5" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_a3d2753f-232e-4cb9-80fa-bf475d8b86bb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_07cc866a-cc75-4e4f-94c7-cc6d9644916f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_b7773f87-533c-4e93-a8a2-907b0f694dbf" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant V">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_6f3e98a6-0a95-4e94-95b0-c39bc806a958" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_cd7dd81d-faa9-4562-b93f-ef26760d8ee8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_fe8383f7-0e24-43b2-bed0-78b315dc6f81" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_4f7be688-a0a3-452d-a34a-4a9e660d0cee" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_224cca33-29c4-4014-96e1-a929b8487b51" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_2e331271-64d5-4327-91df-faa618be400e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant W">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_92ff2342-0bd3-47a5-b677-773def796cea" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_189db249-72cc-4a34-b6b6-b040d3d2149f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_43ca8317-a690-45a6-90fb-a3c448d2f36f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_bcdb23cd-4b7c-4216-bcdd-9c8b84fd48d9" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert mit Kommentar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_2a226f68-7502-4bf6-8f32-1b9052542334" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Verwerfen bestätigt">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_d2c9e70e-ba4d-4853-8a66-6133568ef650" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant A"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_2144ccea-e527-476f-98d9-3d4ec19d47e2" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant B"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_5f0ef003-b0df-4d8a-ac3f-b40ee1213a63" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant C"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_e81e5a2c-1ab9-4886-a630-44d2dcff9246" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant D"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_e1a840e6-eef1-4743-a1b5-35f7be9efb52" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant E"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_4530c551-84c5-4a08-93cc-46514369023c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant F"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_fe7c3ebc-ca8c-4381-a4f2-234d6fc6d839" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant G"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_40019c58-80a7-42e8-83c3-12b91bb0c4ac" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant H"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_55f955fe-e2b5-44f8-ac04-d28376ef8c4a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant I"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_a61fb777-60e7-47e2-a3d1-4abc2c5f0b5e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant J"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_e60b3e3d-5a9a-4a6e-8231-93a88b886bf4" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant K"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_079ff2a3-631e-41e2-a1b3-da375ebb8e9b" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant L"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_ccd6ccb0-8679-4fdd-8e30-42b14f777dd6" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant M"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_c1d3e05a-0bd9-4f6a-a654-f437c46ac30e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant N"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_6cc1c260-ce72-4e50-bb22-383741f952d8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant O"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_95336e8d-e0cc-4b79-accc-7551f01af4a9" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant P"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_26d1d9fa-eef0-4be2-864a-fc50c5b026f3" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant Q"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_07c6348e-b930-424e-8d89-ac4f8b50a8f7" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant R"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_1043b6ad-4089-4612-b77e-35483d0bccdf" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant S"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_7d5b7fcb-c1eb-428b-841b-71cf53c36307" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant T"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_6add89e3-3ce7-4a65-a7e5-52c89e127a0a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant U"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_3077b606-6ab5-457f-a7c7-de4d9cdb8098" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant V"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_53c9d361-cee0-48ea-beba-a71aa829b252" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant W"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_e3128402-a751-42ed-a20b-1061b2db3a42" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant A"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_034f41a0-bb59-48d9-875a-765ddf30f1cf" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant B"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_ec5966ba-12cd-4e59-adf3-3e08ba0cd74e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant C"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_2aef50ea-a976-41d9-be19-a826bee99060" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant D"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_a42dd331-2963-4981-a08b-0d0871c8f1d3" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant E"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_a5b7a280-e081-4b60-aea0-d85483116bbb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant F"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_c6397db0-00f6-4619-a704-95d6bc44afe3" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant G"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_eca7e007-c746-425e-afc2-a38d8302849f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant H"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_b46a0782-6d08-4cdd-84e1-55bc59b18b22" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant I"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_235a0c44-31de-4ef5-8dec-9e418bd9a9c9" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant J"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_ab900098-082a-4c5e-8a2f-153a7f009cbc" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant K"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_83136aa4-ca46-4d6b-89e2-d3b70373d93a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant L"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_3a1018c8-7885-403a-8f56-2eaad8743b0b" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant M"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_f00b91bd-f9e7-4ba8-b16c-55c324043c12" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant N"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_d527bd03-a845-44b3-9b4b-ae2a9e8d3e79" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant O"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_0773edfd-37a4-4d8d-b278-a6b2ea4490e1" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant P"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_ba28bba0-6709-4feb-8f5a-1475b3f4867a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant Q"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_b0b0b8da-635a-48dd-8b8e-e01ab3a83821" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant R"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_df0d609a-06e5-4ef7-82f7-8ee2480a3ba2" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant S"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_25de1923-1e4f-4cb6-9a97-e2ed709fc1b7" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant T"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_1b05803e-665c-41c6-a697-c4e415cb8927" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant U"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_d7d4feae-4fa6-4d13-af52-23d7ce19e911" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant V"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_1e417aef-4cc7-40ee-afe5-c6013098e285" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant W"/>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_4d779fba-f23a-42e4-aa94-21bd99f5132f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant A">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_76b72f3a-f218-499b-830f-76630042238f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_cc4c27c9-5c91-4627-b148-c7b0ac2d75aa" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_9037b714-d2b6-4821-ae92-6a409967c2ce" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_7728d318-7758-46e0-a95e-7abd2ed16ea0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_c4e324e8-7c29-4c80-ac2e-d6f1a2403438" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_0fe70ce8-9a02-4177-afc4-5cf7bfb671cb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_48bf29a1-f7b2-484f-b5e6-a515d6d79bf3" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_10a6c6da-7400-4a13-a37b-999c5736b9ca" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant B">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_9b6f036d-1a10-459e-84f9-1345a6ce7f83" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_91f734aa-dbab-4d9f-8705-49ea983c921e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_7f26f132-a7f4-4f64-9202-9ff3bcb76fc2" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_3312f31f-384f-418a-b92e-163fec0f30e6" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_080093d1-0854-47f8-9cb2-3bc1cddbc831" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_f55edcdd-cd3c-4046-99cc-d7272ae06b0e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_fcf09c45-df18-43c6-8733-b9bec356f8d2" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_3b1eb9c7-f23c-4c51-b67e-6863b7d6059a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant C">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_330e6733-8dec-4662-92bc-d11aa0491abf" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_3d6b299a-07d6-446a-ac48-ff9806c24780" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_285b3d69-d306-4ee7-a6d2-c620ad50781a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_32d2c046-e6a3-426d-b133-dd447b900ad8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_4eb42c2b-41ec-455a-9199-7785b33cce16" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_cacae2e7-2d3a-45aa-9250-3dc21bbea4cc" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_97fe7386-0692-4ac3-9f35-45d642f0d82a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_3f914d8d-c455-4e47-b6bb-99b8de5353d5" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant D">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_d9e8067a-372c-49ef-ac57-519a69f0cd08" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_8ca6fe28-e7af-4352-8392-b7435fe7feaf" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_2110e3f5-912a-4ccb-81e8-7d2795f80428" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_2f139b1f-612d-4305-9e41-381118842a32" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_8466f829-8f1e-45bc-9766-de1e906c69af" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e07fbee1-e9c2-4193-a1e9-48ed1871d53e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_c5830242-5ca4-42b2-8d85-8644aeefc129" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_c293ed38-70b0-4343-af4a-6cd1e3699d42" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant E">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_5647d911-b9e8-4dc1-81b5-ffacbf391254" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_49126cf3-3cc4-462c-b05f-61ac7e807f44" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_c2ff4bf4-ba98-4e88-ae25-366351014992" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_af52a3ca-37ba-4db3-84d3-fe21c7ca4402" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_a57167e4-f69d-4207-9543-90cc142ba478" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_69cedca7-90a0-4672-80b9-1194d54810e0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_155864b5-a52e-4530-94ba-8ce76a2e9d61" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_ce4213e5-8d1c-42cd-9a2a-663874d09db0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant F">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_250dbd1f-c440-4774-8817-0ab2d6576486" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_07b16ae9-21ce-4c9a-ad6b-ee3d9dd5a6fb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_b264e225-df1e-44b4-97a3-600729b5e696" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_1010f033-d531-4cfe-98fa-cf9c341822f8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_91648ef2-15cf-49a4-9e5d-ebb312616ae9" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_f4d9fe8f-f942-4eea-9cc3-0abad26b511f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_a845f713-07e6-49bf-99e5-f0672029a5eb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_c314a9fa-c468-4cb5-8bfd-22b3f127ef2c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant G">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_75786048-aa46-4592-9ecb-f9767ff4ba9a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_bf381bd5-e941-4978-b080-b7ee9c84143a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_37da472d-0e15-49a2-9a69-f0b8168af8dd" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_33711330-b22d-43ff-9af9-04c58cff650c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_1352e5d1-31a9-4255-8c88-de2073aa0d4a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_a5bdd521-3302-4218-a0af-e32b42da3d25" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_49feadea-87fc-4c40-9eb1-8d2b5255236f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_22433f87-fdd4-49b0-b798-a6fb9ce3fe44" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant H">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_62dc35d4-ab3f-4cfd-8cde-e27d300dca20" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_98619105-3890-41fb-ba46-237b7788725b" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e47c9654-8534-4442-b3d5-447a9ef967d7" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_310f7fe7-4632-43cb-9845-579dd01513b9" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_05ec82dd-04ee-4de9-aa52-39ca63fbbc75" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_f77cf60a-46f4-46c0-bc44-37e07e0da538" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_c2506d34-725d-4bdd-94d3-1641998f4231" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_0c70f4b7-9ab2-4a69-bbd4-ca5a7abe2bc6" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant I">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_749e69a4-f1d6-485f-b14e-2eac578afff5" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_d0bd50ec-63b7-4527-9f0d-f4c7cec39ba1" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_5f51149e-2daa-4f93-a62e-fed1f1bf45aa" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_57706e07-0f1e-41fa-aa7d-8eaad37b5c8a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_1c337f06-70e4-4734-bb7f-11472a185d0c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e1cd7a92-7fb8-477e-8c6a-67655ed1f6ca" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_923e8e4f-82b5-4765-a500-74fd1331f0a9" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_b13a821b-41e3-42df-a199-bcf123d4dbbe" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant J">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_3d8b7c5a-3000-4e0d-bc78-90cc45bcf2e4" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_02f2a299-4c0f-49d0-ad2b-64b0669f43f0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_94c3863c-08ac-4f0e-9b25-3159c57547a6" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_d4c370d2-47cd-4e45-abf4-657f1f9991a8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_b2e61148-40c2-4de3-97ce-c874222dbfde" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_2a067f4b-e15a-4e8b-83e5-dbb73cecb1de" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_c9e2f944-9687-46fd-bc08-5fbcb8bb5129" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_63723e6f-a7f8-4d33-bdd9-e1cff3fa360d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant K">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_89774fdd-d7c4-48ce-92e3-3667f714a9b7" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_6060674c-8f06-4137-89f1-ab098aa0d809" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_4394e62d-83ac-4127-b722-6ff692404337" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_a6e3d217-609c-4570-80c2-9ef251d6da34" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_55b99015-437a-4200-a47d-866bcdcc38ab" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_4e4672a4-c43c-4681-8466-de4c859ce277" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_767f330e-1b48-40b1-bfe9-c95cd80993d1" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_08937151-0b26-4daa-a089-b91e9608f66d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant L">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_a205dd38-01ae-4ac6-b93c-7b322080e611" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_bf2f2500-31ac-4d29-a2c1-52d6fddb396d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_1017dec4-4339-47a9-af66-cc9792940d8f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_0c3ba607-c388-43af-9324-b8db0d77f160" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_ca782ffd-d6fe-4c6a-90f6-d4fec4ae1ffe" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_edeb0a48-3b0f-4d5b-bf2c-1914402b93ec" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_20af278f-a816-48f1-bdc6-2a79ac0d0381" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_9c3de211-81c5-4642-b80c-239cbd939698" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant M">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_76461c75-f85f-44db-8d6a-5155709b60f0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_2c3f0b56-9873-4339-a316-1b1911c00fcd" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e00c5b1f-9514-441b-8d80-93fd6b86cf76" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_87816f95-f164-4a31-8c88-d2410efca63a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_b4a98d5e-b23e-441e-b8c2-f20c422259a1" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_852d6860-7c47-4141-9d63-ccf1b3d0ac25" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_53f9628f-ca05-46be-b350-61f9606e65b4" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_32f77809-157e-4f8c-884d-884369cf3f1b" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant N">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_10491eab-1aa8-4975-9afa-4d6524110bf5" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_48b0620d-ef0e-4c45-97ed-bd426de95477" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_0b2aa0bc-fab6-468b-abb3-ce7da309db2e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_098bfccb-6686-4739-9f54-696dfc53ec58" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_8bba45b6-2fa7-44b5-b061-b47f43ac7c73" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_90e041cd-ea65-4f2a-b804-4b40553108ef" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_a5e12140-abbb-4371-ad67-447b44f5cefc" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_ee5d12c6-1bb5-43c3-9681-da084ca56763" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant O">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_efec8163-bab0-419f-a5c0-8b13a5a72aea" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_0080828d-5770-4173-93e8-95bd47943702" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_2ff6c401-c2d3-48f4-af7c-d95e395fc69d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_cfc2e5e0-c1e7-4515-acf4-5a8d5508134f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_6e3c7af0-d941-4b87-af88-23d25c566451" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_cae9b86f-0f1c-49c5-ad95-e90de66751ee" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_80dd5632-93d3-42f9-adef-08d30104257d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_e195b69b-1524-40ca-a02a-5f72a6d405f8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant P">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_ef09f9c2-ddb3-4e49-bc45-0e7d68bf8aa5" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_99cf439b-04a5-4004-a750-237ef9e1064c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_54e276da-46bd-41b0-a19a-160c07925d33" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_ba5bc757-30ec-4510-86eb-947cf2969caf" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_a73c4fb4-bd2d-4660-8957-d7ac05db7a36" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_63aed593-5136-470e-ae2d-5d6726b54c4d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_566c8216-74de-4dd7-a1f0-0ef29a01f55c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_10bad229-480c-4fec-970f-327b1d35289d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant Q">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_fc5d9f33-2a4e-473a-81b7-ab5347bed870" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_73f824c8-5483-4815-8cc9-f57c2a2c0cdb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_9a370acc-7816-4222-a7d9-9a63cbf2f8a9" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_c53042dd-f0b5-40e9-b75c-dd69d1cd2ff1" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_c8013a18-34d6-4427-b141-796d87c86402" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_1e14e3d7-5448-498d-9280-458991959135" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_58aec562-fc6c-416c-8fcb-a7948c4ffa97" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_8b72217c-eb70-4fe0-9a2f-82184ba39865" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant R">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_f3831744-16d8-4256-9e1d-61b8d2571500" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_afdbf4fb-1b8f-4911-aa0a-c3e3204aeb9f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_de13f677-6d11-4e7a-a69f-8aaa7dc370a8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_fe054f36-aa3b-4bb5-a528-88ce1ed09630" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_16eb11ac-8a22-4fef-8154-37e78de897b0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_be057291-9727-424d-b8a2-fe6aa964351a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_904ed33a-883c-4ed0-875c-657f609eded3" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_af9170a7-1c8a-4f13-a4c4-5329e4fb0f70" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant S">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_2b3c6650-22aa-402c-b0d9-35ff7fb997ac" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_73602c3d-5a8f-49e2-91ee-8bf4f6af4dfc" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_de835cfb-ee82-47a8-8f23-5538de641d86" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e6d0f132-9cb7-4cdc-98ea-e32e82c44b28" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_515c22ba-deb0-4009-9276-d5425123504a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_17b59978-fcbc-4d67-b638-1ba04fa92b23" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_f446c147-b931-4193-b99c-f8a6e1b78170" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_a2442d6d-3476-4574-8601-90eab9015af9" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant T">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_8885c601-c6ec-474d-85e3-318c4672e48e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_bc128c7a-f0a7-467e-9bb3-f5b4816b3c76" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_55503736-71ca-4964-84e4-0e7a1097b468" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_0109ed9f-01eb-4e94-905c-b4dac961ee4c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_3004e9fb-9706-4f0f-b01d-894076270f37" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_60c5e9a8-5c20-4ee6-8264-6679afc5d1a8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_a7978a68-ddcc-42cb-afd1-30f448d40c14" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_7d77c0bf-db38-43e3-8bec-7727c3171748" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant U">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_789c5f7c-16d9-4d2f-b180-b005c189775e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_9e565601-1353-4ff5-80db-c4a8fb81fcf0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_3fd373de-0796-4144-b389-8233b55113b4" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_cbc0d0ce-a3fd-48c8-afce-31ee77a65341" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_961377ac-9d12-4f3b-a35e-e35626dbf68d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_b085e3f5-1a7f-4308-9e09-bab8942c6876" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_883a8d6a-f0cd-40c3-a56a-b193804efbd4" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_10aede7a-1417-4c8f-8953-db039abc9a08" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant V">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_677bfb9e-3c6a-4f6b-9898-7e118cc89626" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_8c1f388a-26d1-43bb-87c9-238b4f4f4423" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_3447f841-5465-45ad-ab2f-19c77ee0634c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_a8a14120-7512-49e0-ab3d-d21c5ae7755e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_d312cdbf-d14e-49ff-bd94-520cc396bb29" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e91adad6-ec36-4833-871a-3a6bdbe83c93" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_c28f89e7-2fde-4d87-a064-fb3bed35754f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_8fc841ff-b924-42ea-a1e2-a6fb08b9a9d8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant W">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_edb6400b-f11b-4d7e-81ce-875553a44c8c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_15629250-c541-45a8-a605-7e25b51bc9a2" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="zu bewerten">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_e5236d0b-707b-48ad-99e3-ad1fd30e70cf" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_66c80476-26ea-4c5e-9d5d-36c1234ed1e5" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="nicht akzeptiert">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_887c14d7-5ec3-4ed2-b0fe-45d379d5fd2f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Klärungsbedarf">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_04f76d6e-a895-4397-a800-845681d7418d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="verworfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_b1d87e1d-1127-4733-8527-854488744bcd" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Vorgemerkt zum Verwerfen">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT=""/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+      </DATATYPES>
+      <SPEC-TYPES>
+        <SPEC-OBJECT-TYPE IDENTIFIER="_6071edb2-6898-4ffb-931b-eb6f7075b7cd" LAST-CHANGE="2025-12-18T14:07:55.000+01:00">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Beschreibung des Inhalts." IDENTIFIER="_f75c0005-55e9-47ec-9a84-c6457da68612" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="ReqIF.Text" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_266042e4-0195-4d43-a138-670c1eab1896</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="" IDENTIFIER="_9d36d841-9775-43a3-bccd-8d7369d7fe17" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="ReqIF.ChapterName" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_266042e4-0195-4d43-a138-670c1eab1896</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="" IDENTIFIER="_61dd5914-3a3d-4e22-9ece-95dc62c61fde" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="ReqIF.Category" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_01c60f0f-72fb-4dc0-8fe2-bf0b17fbdf31</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-INTEGER DESC="" IDENTIFIER="_dd51195c-820f-4a8e-9dbd-9e4be23793cb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="ReqIF.ForeignID" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-INTEGER-REF>_b5c25608-c081-4e36-bfd5-200931bb8436</DATATYPE-DEFINITION-INTEGER-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-INTEGER>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="" IDENTIFIER="_b988e6c6-e742-4101-8e95-8a2905a50c8e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Text übersetzt" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_32ddd88b-8d24-4bcd-8d50-07f39b38c491</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_41de5ff4-58d1-4ccd-8711-cae0a7687f8f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant A" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_391af5c7-a7e5-47c2-9253-436ad4ebb1cf</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_c8ff686d-cd02-4779-beb8-33852218d4e7" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant B" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_b6ed6f5a-7fd5-40b3-a21b-f5c6a625f862</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_1d6d6ac7-5847-4aa6-9318-c80e4c46d955" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant C" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_9e5dff61-1ac1-4f8e-8896-b50f1e3c5d71</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_d6e03449-a146-4646-b222-e6e7517e291b" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant D" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_34d24de6-2df5-43b5-bc1c-fbfb1486e999</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_6d827410-6e87-41a9-b4a1-ac220558e86f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant E" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_a1df452b-32a1-42f0-9719-e5884f30c6fd</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_1efb1c9c-3709-4bd5-94a8-97be09df6558" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant F" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_617cadfb-912a-4f22-95be-b9598b5a60ee</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_ec048851-5c77-43e4-b7d8-13a06ba91a40" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant G" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_344cbf29-a862-463f-a2e6-7ad14c5c5167</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_d7188078-c5fa-4f80-a5c7-2e0061b8f856" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant H" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_d53cb43c-a937-4f76-bc10-72b9df3a24d2</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_401b3d4d-26da-40b5-8bb2-b1a95cc8e59f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant I" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_1b8fea67-c2ec-4e27-9306-2c7372e76290</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_6fdb8f45-368b-4526-8c50-a81effef137f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant J" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_02ad6833-2088-4753-9a52-195aa6bcbde0</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_cee842ec-aa6b-4948-8d61-6a0a27cbf56a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant K" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_aaa0a7a2-0ae1-4b96-b4d7-7bb7c0ad6af6</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_647c9fbb-ef7c-4f14-a087-4ddb85725ea5" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant L" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_50f43db1-96ad-47c3-b857-c6efa684e1af</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_522e4e66-ce5e-4f71-bb91-7103def73696" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant M" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_0bfdf50b-c580-4632-b247-978a397e92ab</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_794f9856-d87d-4e6c-a29f-a3615c48630f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant N" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_7b4faf7a-cbdd-46e7-a034-49021cdbb590</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_283ff43b-e2ad-4ca6-a1ec-8c04846eb83d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant O" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_d14fc9fe-6005-4cbd-9a2b-462729d56333</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_daf126b0-a22e-4052-8be8-6edf3bb0e0b9" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant P" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_7b638130-0b73-42df-8beb-68a7b920f236</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_7dcb1e47-870d-4fc6-bb20-2ae68ba8677d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant Q" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_4d82e4d1-7d1b-4fa1-98d2-785770e983f3</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_c7f6cb3c-55d0-4287-8e77-e0c3bfbfb1ae" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant R" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_330635fe-705a-45e6-ad76-06cabc4e60aa</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_d048be3a-2695-4ba3-bb70-c8f9b707173f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant S" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_9d0f0c17-1a02-4d32-bb01-a3fccfbd01a6</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_e081dda5-b00d-41a5-9a51-486d9a54afba" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant T" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_c15d77df-8f60-4b65-93e5-32f1d0cab57a</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_e1aaab2d-2c59-4627-9b95-140036606d97" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant U" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_e4e94d52-7231-4697-b76b-3840e2306e07</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_ae755ce9-017c-436f-8138-6fc07cd009f6" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant V" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_b7773f87-533c-4e93-a8a2-907b0f694dbf</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll zukünftig den von den HIS definierten Austauschprozess umsetzen. Die HIS verwendet statt des Begriffs Zulieferer den Begriff Lieferant. In der Prozessbeschreibung ist explizit auch dieser Attributname erwähnt. Der Wertebereich ist ebenfalls im HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_188abb82-80cc-4927-9898-05672606d930" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status Lieferant W" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_2e331271-64d5-4327-91df-faa618be400e</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_88b38d26-9797-4fc4-93da-1f601ec9cb1d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant A" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_d2c9e70e-ba4d-4853-8a66-6133568ef650</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_27f3c17b-7d47-4f5d-81af-0f05debbf277" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant B" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_2144ccea-e527-476f-98d9-3d4ec19d47e2</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_0f446bf4-53de-4ef1-9ae0-fd000d6d3083" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant C" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_5f0ef003-b0df-4d8a-ac3f-b40ee1213a63</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_e1808328-f9a2-4877-ab76-e5a1b4d26ce1" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant D" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_e81e5a2c-1ab9-4886-a630-44d2dcff9246</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_e57beca2-e202-4cb5-87ba-da58c117115c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant E" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_e1a840e6-eef1-4743-a1b5-35f7be9efb52</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_241fbcaa-b37d-476b-b27d-a728ac1183c7" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant F" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_4530c551-84c5-4a08-93cc-46514369023c</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_26355fbf-a53f-4356-8987-b759eeddc2c7" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant G" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_fe7c3ebc-ca8c-4381-a4f2-234d6fc6d839</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_fb82a33c-cecf-4d37-87c6-4e541704bdda" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant H" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_40019c58-80a7-42e8-83c3-12b91bb0c4ac</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_b742d6c9-7f39-4b48-ae79-18bdf21b7c43" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant I" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_55f955fe-e2b5-44f8-ac04-d28376ef8c4a</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_842c103b-c857-400b-95bd-1cd4b49978a6" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant J" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_a61fb777-60e7-47e2-a3d1-4abc2c5f0b5e</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_8413dec6-66b8-4001-8f79-46c27cc58856" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant K" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_e60b3e3d-5a9a-4a6e-8231-93a88b886bf4</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_7020510e-4a10-4de1-a8af-5225c88d3d22" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant L" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_079ff2a3-631e-41e2-a1b3-da375ebb8e9b</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_83ee856d-b17e-4a0b-bdb4-a099ee8bdaa9" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant M" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_ccd6ccb0-8679-4fdd-8e30-42b14f777dd6</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_284123f6-4b8d-42f4-99c7-63f2fd8cd402" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant N" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_c1d3e05a-0bd9-4f6a-a654-f437c46ac30e</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_f5688abe-dc52-4bf9-b0af-2b1970c61369" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant O" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_6cc1c260-ce72-4e50-bb22-383741f952d8</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_418b60a1-fb64-447d-8a8c-90634b374ba2" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant P" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_95336e8d-e0cc-4b79-accc-7551f01af4a9</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_fe0a5f51-e5e9-4c6e-9bd8-852a92782a48" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant Q" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_26d1d9fa-eef0-4be2-864a-fc50c5b026f3</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_f5bf521b-b847-4da2-9912-ed58e8542d5b" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant R" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_07c6348e-b930-424e-8d89-ac4f8b50a8f7</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_560b75bc-2b2e-41e7-bd22-a2e895531fa0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant S" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_1043b6ad-4089-4612-b77e-35483d0bccdf</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_00f473a1-b541-4d6b-bae4-638acf0262e1" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant T" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_7d5b7fcb-c1eb-428b-841b-71cf53c36307</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_1d1ad755-b252-4eba-be84-78178b079791" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant U" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_6add89e3-3ce7-4a65-a7e5-52c89e127a0a</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_e812483a-863e-43ba-8266-9fc4f9d09db8" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant V" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_3077b606-6ab5-457f-a7c7-de4d9cdb8098</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentare, die der Lieferant bzgl. des ihm zugesandten Bauteillastenheftes macht. (z.B. Fragen, offene Punkten, etc.)." IDENTIFIER="_a35ad12a-b9f5-460b-b6b4-1794a3c8cecf" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar Lieferant W" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_53c9d361-cee0-48ea-beba-a71aa829b252</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_f14810e0-dff5-495f-88c4-b4946e3d24cb" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant A" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_e3128402-a751-42ed-a20b-1061b2db3a42</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_70396429-3aa7-465d-8236-28fcb8ea33c2" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant B" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_034f41a0-bb59-48d9-875a-765ddf30f1cf</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_9176367b-2c8a-4323-9bd7-0c73c70b6099" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant C" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_ec5966ba-12cd-4e59-adf3-3e08ba0cd74e</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_b99ab81e-e7b8-4f51-b002-3ca51d9c4e86" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant D" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_2aef50ea-a976-41d9-be19-a826bee99060</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_8f306460-23aa-4cd7-85b7-001340c645a6" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant E" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_a42dd331-2963-4981-a08b-0d0871c8f1d3</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_7d5d3af6-e55c-456b-b05b-fc2cb781a3db" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant F" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_a5b7a280-e081-4b60-aea0-d85483116bbb</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_eb7b885a-76fe-464f-a4c6-c140c387cc8e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant G" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_c6397db0-00f6-4619-a704-95d6bc44afe3</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_bc2d620a-e798-4790-82a1-12fadd947a85" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant H" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_eca7e007-c746-425e-afc2-a38d8302849f</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_c4fa4d10-7f59-497a-9a2f-3e43cd8b0966" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant I" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_b46a0782-6d08-4cdd-84e1-55bc59b18b22</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_837e4e47-f0c8-4167-b4a7-7fbda990d70e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant J" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_235a0c44-31de-4ef5-8dec-9e418bd9a9c9</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_080ed682-09e0-42db-a06d-2c5fd112624d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant K" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_ab900098-082a-4c5e-8a2f-153a7f009cbc</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_8ac22f4d-fa21-4c2e-a12d-501a27832ef6" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant L" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_83136aa4-ca46-4d6b-89e2-d3b70373d93a</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_2c55f2d2-2625-41cb-810f-2eee2f20a92f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant M" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_3a1018c8-7885-403a-8f56-2eaad8743b0b</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_365fd30a-4090-49d6-9789-42c247ab8569" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant N" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_f00b91bd-f9e7-4ba8-b16c-55c324043c12</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_56621c57-f071-4579-9ab2-f4956ea69563" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant O" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_d527bd03-a845-44b3-9b4b-ae2a9e8d3e79</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_e8659753-d806-42d1-a197-70b6c3e57c67" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant P" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_0773edfd-37a4-4d8d-b278-a6b2ea4490e1</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_bf574003-e1b9-4a1f-9dd2-7b0a9623274a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant Q" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_ba28bba0-6709-4feb-8f5a-1475b3f4867a</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_5f73fbb2-6ead-41ab-a23f-58465b34baef" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant R" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_b0b0b8da-635a-48dd-8b8e-e01ab3a83821</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_ea4d116a-bf63-42ac-aec3-0b0496bd7185" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant S" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_df0d609a-06e5-4ef7-82f7-8ee2480a3ba2</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_36141520-fc35-4e1e-b030-7d74deb7fb4c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant T" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_25de1923-1e4f-4cb6-9a97-e2ed709fc1b7</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_78c129db-9aa5-41d3-ace5-98380485845a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant U" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_1b05803e-665c-41c6-a697-c4e415cb8927</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_f8aeb1d7-b17c-4d40-b004-4e41e61d1c60" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant V" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_d7d4feae-4fa6-4d13-af52-23d7ce19e911</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML DESC="Kommentar, den der Hersteller in Bezug auf die Kommentare des Lieferanten beim Datenaustausch (Lastenheft/Pflichtenheft) eingeben kann." IDENTIFIER="_ed46e909-e2be-42e6-9cee-49c99013e21f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Kommentar OEM zu Lieferant W" IS-EDITABLE="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_1e417aef-4cc7-40ee-afe5-c6013098e285</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_cb5093c8-81a0-46dd-83c8-45d145e1b00f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant A" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_4d779fba-f23a-42e4-aa94-21bd99f5132f</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_d8caba16-32cc-47e2-845e-13578ac5d24b" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant B" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_10a6c6da-7400-4a13-a37b-999c5736b9ca</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_51d5230a-5e4d-4843-be17-24499266d3df" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant C" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_3b1eb9c7-f23c-4c51-b67e-6863b7d6059a</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_3a3cd2f6-820f-4248-a451-c8a5b671c61f" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant D" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_3f914d8d-c455-4e47-b6bb-99b8de5353d5</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_6ad70746-9e02-4e19-95a6-01d02565f60e" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant E" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_c293ed38-70b0-4343-af4a-6cd1e3699d42</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_96a98e1c-4294-4fdb-a1a9-f7f009beb1de" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant F" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_ce4213e5-8d1c-42cd-9a2a-663874d09db0</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_68078458-a81f-45fd-aedb-c2c1114e661c" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant G" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_c314a9fa-c468-4cb5-8bfd-22b3f127ef2c</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_a0b4a9bb-babe-493c-b37f-ea477b0a94a1" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant H" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_22433f87-fdd4-49b0-b798-a6fb9ce3fe44</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_2524dc9b-ccb2-469a-a204-e71c70538575" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant I" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_0c70f4b7-9ab2-4a69-bbd4-ca5a7abe2bc6</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_51358f8c-68ba-47d4-b2e9-36ca5522155b" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant J" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_b13a821b-41e3-42df-a199-bcf123d4dbbe</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_e29e3985-eb97-4e9f-929b-5d1d49939729" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant K" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_63723e6f-a7f8-4d33-bdd9-e1cff3fa360d</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_70b67268-8406-494b-a5b8-00e6ad59dfd3" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant L" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_08937151-0b26-4daa-a089-b91e9608f66d</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_8738cba1-f20a-47ff-b82b-c7b005561d1d" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant M" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_9c3de211-81c5-4642-b80c-239cbd939698</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_da5ccafd-d753-40da-8440-b056dee06851" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant N" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_32f77809-157e-4f8c-884d-884369cf3f1b</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_2153baf5-0045-4beb-b54f-28b108069014" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant O" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_ee5d12c6-1bb5-43c3-9681-da084ca56763</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_bff0e2a3-d6d5-44f0-b74d-5b0c627dd7af" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant P" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_e195b69b-1524-40ca-a02a-5f72a6d405f8</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_4257ee49-487a-460f-a304-774ef3055116" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant Q" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_10bad229-480c-4fec-970f-327b1d35289d</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_d86a77cb-e1a2-4286-b7b4-45843666c5db" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant R" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_8b72217c-eb70-4fe0-9a2f-82184ba39865</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_1c510f1e-4b13-40d4-ae52-926eb40c57ca" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant S" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_af9170a7-1c8a-4f13-a4c4-5329e4fb0f70</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_49b8c910-c53d-46ec-bf3b-fedc703c99b0" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant T" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_a2442d6d-3476-4574-8601-90eab9015af9</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_1534b7d4-57b3-4af3-a050-e77620b9695a" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant U" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_7d77c0bf-db38-43e3-8bec-7727c3171748</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_3dbd8e88-32d6-4784-9175-9875280034c7" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant V" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_10aede7a-1417-4c8f-8953-db039abc9a08</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION DESC="Der Datenaustausch mit den Lieferanten soll den von der HIS definierten Austauschprozess umsetzen. Der Wertebereich ist in dem HIS-Prozess in dieser Form festgelegt." IDENTIFIER="_c4f96ea9-fce1-483e-b641-efcacf0c5649" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Status OEM zu Lieferant W" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_8fc841ff-b924-42ea-a1e2-a6fb08b9a9d8</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+          </SPEC-ATTRIBUTES>
+        </SPEC-OBJECT-TYPE>
+        <SPECIFICATION-TYPE IDENTIFIER="_208f51de-ef55-4cfd-82cf-f7f7aa5d31fd" LAST-CHANGE="2025-12-18T14:07:55.000+01:00">
+          <SPEC-ATTRIBUTES/>
+        </SPECIFICATION-TYPE>
+      </SPEC-TYPES>
+      <SPEC-OBJECTS>
+        <SPEC-OBJECT IDENTIFIER="_d229ab85-8b23-43ea-bfa1-77679987657c" LAST-CHANGE="2025-05-15T15:04:28.000+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_9d36d841-9775-43a3-bccd-8d7369d7fe17</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div>Allgemeines</xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_f47ace98-290f-4967-9abb-39806afe51e8</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_61dd5914-3a3d-4e22-9ece-95dc62c61fde</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-INTEGER THE-VALUE="19250151">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-INTEGER-REF>_dd51195c-820f-4a8e-9dbd-9e4be23793cb</ATTRIBUTE-DEFINITION-INTEGER-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-INTEGER>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_b988e6c6-e742-4101-8e95-8a2905a50c8e</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:h1>General</xhtml:h1></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_6071edb2-6898-4ffb-931b-eb6f7075b7cd</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_72c51bc7-a171-4cdf-bf5d-d6b2a68fce9d" LAST-CHANGE="2026-04-23T13:50:56.810+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_f75c0005-55e9-47ec-9a84-c6457da68612</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p><xhtml:span style="text-decoration:underline;">Hinweise zur KSU Klassifizierung:<xhtml:br/></xhtml:span>Die KSU Klassifizierungen sind gemäß ORL24 Aufbewahrung von Unterlagen (Anlage &quot;Klassifizierungssystematik für Unterlagen (KSU)&quot;) festzulegen:</xhtml:p><xhtml:ul style="margin-left:42px;">
+                    <xhtml:li> Temporäre Arbeitsunterlagen / Ausleitungen aus RM-Tool: <xhtml:b><xhtml:i>&quot;Initialklasse&quot; KSU 0.1</xhtml:i></xhtml:b></xhtml:li>
+                    <xhtml:li> Alle freigegebenen Lastenheftstände: <xhtml:b><xhtml:i>&quot;Produktiventwicklungsunterlagen&quot; KSU 5.1</xhtml:i></xhtml:b></xhtml:li>
+                  </xhtml:ul><xhtml:p><xhtml:b>Achtung: in AVW muss das Dokument vor Freigabe den Status KSU 5.1 haben!</xhtml:b></xhtml:p><xhtml:ul style="margin-left:42px;">
+                    <xhtml:li><xhtml:b><xhtml:i> </xhtml:i></xhtml:b>Der finale Lastenheftstand, welcher die Bauteilanforderungen für das Serienprodukt beschreibt:  <xhtml:b><xhtml:i>&quot;Freigaben/dokumentationspflichtige Unterlagen für das Serien-/Endprodukt&quot; KSU 5.3</xhtml:i></xhtml:b></xhtml:li>
+                  </xhtml:ul></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_aaa1ba64-f928-4220-80d4-9801308ea8ff</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_61dd5914-3a3d-4e22-9ece-95dc62c61fde</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-INTEGER THE-VALUE="19250152">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-INTEGER-REF>_dd51195c-820f-4a8e-9dbd-9e4be23793cb</ATTRIBUTE-DEFINITION-INTEGER-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-INTEGER>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_b988e6c6-e742-4101-8e95-8a2905a50c8e</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p><xhtml:span style="text-decoration:underline;">Notes on the Classification System for Documents (CSD):<xhtml:br/></xhtml:span>The CSD categories must be defined as per the Organizational Guideline ORL24 &quot;Retention of Documents&quot; (annex &quot;Classification System for Documents (CSD)&quot;).</xhtml:p><xhtml:ul style="margin-left:42px;">
+                    <xhtml:li> Temporary working documents / exports from RM tool: <xhtml:b><xhtml:i>&quot;Initial category&quot; CSD 0.1</xhtml:i></xhtml:b></xhtml:li>
+                    <xhtml:li> All released Performance Specification versions: <xhtml:b><xhtml:i>&quot;Product development documents&quot; CSD 5.1</xhtml:i></xhtml:b></xhtml:li>
+                  </xhtml:ul><xhtml:p><xhtml:b>Important note: In AVW, the document must have CSD 5.1 before it can be released!</xhtml:b></xhtml:p><xhtml:ul style="margin-left:42px;">
+                    <xhtml:li><xhtml:b><xhtml:i/></xhtml:b>The final Performance Specification version that specifies the part requirements for the series production product: <xhtml:b><xhtml:i>&quot;Releases and mandatory documentation for series and end products&quot; CSD 5.3</xhtml:i></xhtml:b></xhtml:li>
+                  </xhtml:ul></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_17253547-16da-4ecf-8e8e-c9d6d30d7058</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_41de5ff4-58d1-4ccd-8711-cae0a7687f8f</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_88b38d26-9797-4fc4-93da-1f601ec9cb1d</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">OK</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_6071edb2-6898-4ffb-931b-eb6f7075b7cd</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_8c5b6341-16de-4e0f-ab80-442a1cfd7b9a" LAST-CHANGE="2025-05-15T15:04:28.000+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_f75c0005-55e9-47ec-9a84-c6457da68612</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p>Bei einer Ausleitung des Dokumentes in Word oder Excel, ist die KSU-Klassifizierung selbstständig durch den Autor in der Fußzeile des Word- bzw. Excel-Dokumentes anzupassen.</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_aaa1ba64-f928-4220-80d4-9801308ea8ff</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_61dd5914-3a3d-4e22-9ece-95dc62c61fde</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-INTEGER THE-VALUE="19250155">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-INTEGER-REF>_dd51195c-820f-4a8e-9dbd-9e4be23793cb</ATTRIBUTE-DEFINITION-INTEGER-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-INTEGER>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_b988e6c6-e742-4101-8e95-8a2905a50c8e</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p>When exporting the document to Word or Excel, the author must independently adapt the CSD category in the footer of the Word or Excel document.</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_1472f3dc-289e-4d81-a47b-64c0ad1dc2f6</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_41de5ff4-58d1-4ccd-8711-cae0a7687f8f</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_88b38d26-9797-4fc4-93da-1f601ec9cb1d</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style=""><xhtml:span style="text-decoration: underline;">to be clarified</xhtml:span></xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_6071edb2-6898-4ffb-931b-eb6f7075b7cd</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_c942e1b6-0aa8-4a71-be23-993ff87ca214" LAST-CHANGE="2026-04-23T13:52:10.389+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_f75c0005-55e9-47ec-9a84-c6457da68612</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div>Arbeitsstände dieses Dokuments sind bei Ausleitungen mit KSU 0.1 (max. 2 Jahre ab Erstellung) zu klassifizieren. Die Klassifizierung erfolgt gemäß ORL24 &quot;Aufbewahrung von Unterlagen&quot;.</xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_aaa1ba64-f928-4220-80d4-9801308ea8ff</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_61dd5914-3a3d-4e22-9ece-95dc62c61fde</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-INTEGER THE-VALUE="19250157">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-INTEGER-REF>_dd51195c-820f-4a8e-9dbd-9e4be23793cb</ATTRIBUTE-DEFINITION-INTEGER-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-INTEGER>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_b988e6c6-e742-4101-8e95-8a2905a50c8e</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p>When exporting working versions of this document, these versions must be classified with CSD 0.1 (max. 2 years from creation). Classification is based on ORL24 &quot;Retention of Documents.&quot;</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_6613501d-29dd-48f3-9a77-a7bd82fbad02</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_41de5ff4-58d1-4ccd-8711-cae0a7687f8f</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_88b38d26-9797-4fc4-93da-1f601ec9cb1d</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">test png<xhtml:br/><xhtml:br/></xhtml:p><xhtml:object data="Nin1_LEB_HL_LAH_Basis_19250150/Screenshot%202026-04-23%20134622.png" type="image/png">This is what will show if the image can't be displayed.</xhtml:object></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_6071edb2-6898-4ffb-931b-eb6f7075b7cd</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_2fc87fc5-e47e-4fbf-b15d-b5172ac1e106" LAST-CHANGE="2025-12-14T23:31:16.000+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_9d36d841-9775-43a3-bccd-8d7369d7fe17</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div>Vorwort</xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_f47ace98-290f-4967-9abb-39806afe51e8</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_61dd5914-3a3d-4e22-9ece-95dc62c61fde</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-INTEGER THE-VALUE="19250158">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-INTEGER-REF>_dd51195c-820f-4a8e-9dbd-9e4be23793cb</ATTRIBUTE-DEFINITION-INTEGER-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-INTEGER>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_b988e6c6-e742-4101-8e95-8a2905a50c8e</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:h1>Preface</xhtml:h1></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_6071edb2-6898-4ffb-931b-eb6f7075b7cd</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_f66f58b1-436d-47e5-bf7c-5b1784f2f967" LAST-CHANGE="2025-05-15T15:04:28.000+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_f75c0005-55e9-47ec-9a84-c6457da68612</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p>Die vom Auftragnehmer zu erfüllenden Anforderungen sind im Attribut &quot;Kategorie&quot; grundsätzlich mit dem Eintrag &quot;funktionale Anforderung&quot; oder &quot;nicht-funktionale Anforderung&quot; gekennzeichnet. Elemente mit dem Eintrag &quot;Information&quot;, sind Informationen zum besseren Verständnis des BT-LAH. Gibt es keinen Eintrag im Attribut &quot;Kategorie&quot;, handelt es sich ebenfalls um eine Anforderung.</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_aaa1ba64-f928-4220-80d4-9801308ea8ff</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_61dd5914-3a3d-4e22-9ece-95dc62c61fde</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-INTEGER THE-VALUE="19250159">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-INTEGER-REF>_dd51195c-820f-4a8e-9dbd-9e4be23793cb</ATTRIBUTE-DEFINITION-INTEGER-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-INTEGER>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_b988e6c6-e742-4101-8e95-8a2905a50c8e</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p>Elements, marked with &quot;Funktionale Anforderung&quot; or &quot;Nicht-funktionale Anforderung&quot; in the attribute &quot;Kategorie&quot;, are requirements the contractor must fulfill. Elements marked with &quot;Information&quot; contain information about the Performance Specification. If the attribute &quot;Kategorie&quot; is not filled, then this element is also a requirement.</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_6071edb2-6898-4ffb-931b-eb6f7075b7cd</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+      </SPEC-OBJECTS>
+      <SPEC-RELATIONS/>
+      <SPECIFICATIONS>
+        <SPECIFICATION IDENTIFIER="_d882efea-3502-434a-9751-57b4a3e68cec" LAST-CHANGE="2025-12-18T14:07:55.000+01:00" LONG-NAME="Nin1_LEB_HL_LAH_Basis">
+          <VALUES/>
+          <TYPE>
+            <SPECIFICATION-TYPE-REF>_208f51de-ef55-4cfd-82cf-f7f7aa5d31fd</SPECIFICATION-TYPE-REF>
+          </TYPE>
+          <CHILDREN>
+            <SPEC-HIERARCHY IDENTIFIER="_68e68cfa-514a-4f44-8c2d-d9271397ddd7" LAST-CHANGE="2025-05-15T15:04:28.000+02:00" IS-EDITABLE="true" IS-TABLE-INTERNAL="false">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_d229ab85-8b23-43ea-bfa1-77679987657c</SPEC-OBJECT-REF>
+              </OBJECT>
+              <CHILDREN>
+                <SPEC-HIERARCHY IDENTIFIER="_9854a4bc-af0b-4ecd-b9ce-6d98f58102ca" LAST-CHANGE="2025-05-15T15:04:28.000+02:00" IS-EDITABLE="true" IS-TABLE-INTERNAL="false">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_72c51bc7-a171-4cdf-bf5d-d6b2a68fce9d</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_5d948e59-5926-4e20-9da8-f585e5b45dc5" LAST-CHANGE="2025-05-15T15:04:28.000+02:00" IS-EDITABLE="true" IS-TABLE-INTERNAL="false">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_8c5b6341-16de-4e0f-ab80-442a1cfd7b9a</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_9a4afffe-fb96-4baa-bfe5-439bf4a59ace" LAST-CHANGE="2025-05-15T15:04:28.000+02:00" IS-EDITABLE="true" IS-TABLE-INTERNAL="false">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_c942e1b6-0aa8-4a71-be23-993ff87ca214</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+              </CHILDREN>
+            </SPEC-HIERARCHY>
+            <SPEC-HIERARCHY IDENTIFIER="_66d4b16a-eba3-44d2-aeeb-e0fd574eec82" LAST-CHANGE="2025-12-14T23:31:16.000+01:00" IS-EDITABLE="true" IS-TABLE-INTERNAL="false">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_2fc87fc5-e47e-4fbf-b15d-b5172ac1e106</SPEC-OBJECT-REF>
+              </OBJECT>
+              <CHILDREN>
+                <SPEC-HIERARCHY IDENTIFIER="_67225b44-ebab-4bd0-b3ad-8627c5810854" LAST-CHANGE="2025-05-15T15:04:28.000+02:00" IS-EDITABLE="true" IS-TABLE-INTERNAL="false">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_f66f58b1-436d-47e5-bf7c-5b1784f2f967</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+              </CHILDREN>
+            </SPEC-HIERARCHY>
+          </CHILDREN>
+        </SPECIFICATION>
+      </SPECIFICATIONS>
+      <SPEC-RELATION-GROUPS/>
+    </REQ-IF-CONTENT>
+  </CORE-CONTENT>
+  <TOOL-EXTENSIONS>
+    <REQ-IF-TOOL-EXTENSION>
+      <configuration:ProrToolExtension>
+        <configuration:generalConfiguration>
+          <configuration:ProrGeneralConfiguration>
+            <configuration:labelConfiguration>
+              <configuration:LabelConfiguration>
+                <defaultLabel>ReqIF.ChapterNumber</defaultLabel>
+                <defaultLabel>ReqIF.ChapterName</defaultLabel>
+                <defaultLabel>ReqIF.Name</defaultLabel>
+                <defaultLabel>ReqIF.Text</defaultLabel>
+                <defaultLabel>ID</defaultLabel>
+                <defaultLabel>Name</defaultLabel>
+                <defaultLabel>Description</defaultLabel>
+              </configuration:LabelConfiguration>
+            </configuration:labelConfiguration>
+          </configuration:ProrGeneralConfiguration>
+        </configuration:generalConfiguration>
+      </configuration:ProrToolExtension>
+    </REQ-IF-TOOL-EXTENSION>
+  </TOOL-EXTENSIONS>
+</REQ-IF>

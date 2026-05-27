@@ -6,7 +6,6 @@ import { computePreview, executeImport } from '../../../src/services/import-serv
 import type { ReqIfDocument, SpecType, SpecObject } from '../../../src/parser/reqif-types';
 import type { MappingProfile } from '../../../src/models/mapping';
 import type { AdoWorkItemType } from '../../../src/models/ado-metadata';
-import type { ImportPreview } from '../../../src/models/preview';
 
 // ---------------------------------------------------------------------------
 // Fixtures
@@ -163,66 +162,98 @@ describe('computePreview', () => {
 // ---------------------------------------------------------------------------
 
 const mockCreateWorkItem = jest.fn();
+const mockUpdateWorkItem = jest.fn();
+const mockQueryExistingIdentifiers = jest.fn();
 
 jest.mock('../../../src/services/work-item-service', () => ({
   createWorkItem: (...args: unknown[]) => mockCreateWorkItem(...args),
+  updateWorkItem: (...args: unknown[]) => mockUpdateWorkItem(...args),
+  queryExistingIdentifiers: (...args: unknown[]) => mockQueryExistingIdentifiers(...args),
 }));
 
-function makePreview(count = 5): ImportPreview {
-  const items = Array.from({ length: count }, (_, i) => ({
-    specObjectId: `OBJ-${i + 1}`,
-    specObjectName: `Object ${i + 1}`,
-    operation: 'create' as const,
-    targetWorkItemType: 'Requirement',
-    fieldPreview: { 'System.Title': `Title ${i + 1}` },
-    warnings: [],
-  }));
+/** A small ReqIfDocument with `count` spec objects, all of known type. */
+function makeDoc(count = 5, typeId = specTypeId): ReqIfDocument {
+  const objs = new Map<string, SpecObject>();
+  const order: string[] = [];
+  for (let i = 1; i <= count; i++) {
+    const id = `DOC-OBJ-${i}`;
+    objs.set(id, makeSpecObject(id, typeId));
+    order.push(id);
+  }
   return {
-    items,
-    totalCount: count,
-    sampleSize: count,
-    warnings: [],
-    canExecute: true,
+    header: { identifier: 'h-exec', title: 'Exec Test', creationTime: '', reqIfVersion: '1.0' },
+    specTypes: new Map([[typeId, makeSpecType(typeId, 'SoftwareReq', ['ATTR-TITLE'])]]),
+    specObjects: objs,
+    specObjectCount: count,
+    specObjectOrder: order,
+    parseWarnings: [],
   };
 }
 
 describe('executeImport', () => {
   beforeEach(() => {
     mockCreateWorkItem.mockReset();
+    mockUpdateWorkItem.mockReset();
+    mockQueryExistingIdentifiers.mockReset();
     mockCreateWorkItem.mockResolvedValue({ id: 1, url: 'https://dev.azure.com/...' });
+    mockUpdateWorkItem.mockResolvedValue({ id: 1, url: 'https://dev.azure.com/...' });
+    mockQueryExistingIdentifiers.mockResolvedValue(new Map<string, number>());
   });
 
-  it('creates work items for all "create" preview items', async () => {
-    const preview = makePreview(5);
-    const report = await executeImport(preview, profile, 'my-project', jest.fn());
+  it('creates work items for all spec objects with a matching type mapping', async () => {
+    const d = makeDoc(5);
+    const report = await executeImport(d, profile, 'my-project', jest.fn());
     expect(mockCreateWorkItem).toHaveBeenCalledTimes(5);
     expect(report.createdItems).toHaveLength(5);
+    expect(report.totalCreated).toBe(5);
   });
 
   it('calls onProgress after each item', async () => {
     const onProgress = jest.fn();
-    const preview = makePreview(5);
-    await executeImport(preview, profile, 'my-project', onProgress);
+    const d = makeDoc(5);
+    await executeImport(d, profile, 'my-project', onProgress);
     expect(onProgress).toHaveBeenCalledTimes(5);
   });
 
   it('marks failed items and continues remaining items', async () => {
-    // createWorkItem is already the post-retry function — one rejection = one failed item
     const error = new Error('Server Error');
     mockCreateWorkItem
-      .mockRejectedValueOnce(error) // item 1 fails
-      .mockResolvedValue({ id: 2, url: '' }); // items 2-5 succeed
+      .mockRejectedValueOnce(error)
+      .mockResolvedValue({ id: 2, url: '' });
 
-    const preview = makePreview(5);
-    const report = await executeImport(preview, profile, 'my-project', jest.fn());
+    const d = makeDoc(5);
+    const report = await executeImport(d, profile, 'my-project', jest.fn());
     expect(report.failedItems).toHaveLength(1);
     expect(report.createdItems).toHaveLength(4);
   });
 
-  it('report totals match expectations', async () => {
-    const preview = makePreview(5);
-    const report = await executeImport(preview, profile, 'my-project', jest.fn());
-    expect(report.createdItems.length + report.failedItems.length + report.skippedItems.length)
-      .toBe(5);
+  it('skips items with no type mapping and records the reason', async () => {
+    const d = makeDoc(3, specTypeIdUnmapped); // ST-002 has no mapping in profile
+    const report = await executeImport(d, profile, 'my-project', jest.fn());
+    expect(mockCreateWorkItem).not.toHaveBeenCalled();
+    expect(report.skippedItems).toHaveLength(3);
+    expect(report.skippedItems[0].reason).toMatch(/no type mapping/i);
+  });
+
+  it('updates existing work items instead of creating them', async () => {
+    const d = makeDoc(3);
+    // Two items already exist in ADO
+    mockQueryExistingIdentifiers.mockResolvedValue(
+      new Map([['DOC-OBJ-1', 101], ['DOC-OBJ-2', 102]])
+    );
+
+    const report = await executeImport(d, profile, 'my-project', jest.fn());
+    expect(mockUpdateWorkItem).toHaveBeenCalledTimes(2);
+    expect(mockCreateWorkItem).toHaveBeenCalledTimes(1);
+    expect(report.totalUpdated).toBe(2);
+    expect(report.totalCreated).toBe(1);
+  });
+
+  it('report totals match created + updated + skipped + failed', async () => {
+    const d = makeDoc(5);
+    const report = await executeImport(d, profile, 'my-project', jest.fn());
+    expect(
+      report.totalCreated + report.totalUpdated + report.totalSkipped + report.totalFailed
+    ).toBe(5);
   });
 });

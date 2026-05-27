@@ -2,9 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useWizard } from '../../context/wizard-context';
 import type { AdoWorkItemType } from '../../models/ado-metadata';
 import type { MappingProfile, TypeMapping } from '../../models/mapping';
+import type { AttributeValue, SpecObject } from '../../parser/reqif-types';
 import { getAdoWorkItemTypes } from '../../services/ado-metadata-service';
 import ProfileSelector from './ProfileSelector';
 import './MappingStep.css';
+
+const SAMPLE_PRESETS = [1, 2, 3, 5, 10, 55] as const;
+const MAX_PREVIEW_CHARS = 100;
+const MAX_TOOLTIP_CHARS = 1000;
 
 // ---------------------------------------------------------------------------
 // Component
@@ -16,20 +21,29 @@ const MappingStep: React.FC = () => {
 
   const [adoTypes, setAdoTypes] = useState<AdoWorkItemType[]>([]);
   const [typeMappings, setTypeMappings] = useState<TypeMapping[]>([]);
-  const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
+  const [sampleItemNumber, setSampleItemNumber] = useState<number>(1);
+  const [sampleSelectionMode, setSampleSelectionMode] = useState<'preset' | 'custom'>('preset');
+  const [customSampleInput, setCustomSampleInput] = useState<string>('1');
 
   // ---- Load ADO types on mount ----
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
-        // SDK.getConfiguration().project is not available in test, fall back to ''
-        const project = (window as unknown as { __ADO_PROJECT__?: string }).__ADO_PROJECT__ ?? 'default';
+        const project = (window as unknown as { __ADO_PROJECT__?: string }).__ADO_PROJECT__;
+        if (!project) {
+          throw new Error('Azure DevOps project context is unavailable. Reload the extension inside a project-scoped page.');
+        }
         const types = await getAdoWorkItemTypes(project);
         if (!cancelled) {
           setAdoTypes(types);
           dispatch({ type: 'SET_ADO_WORK_ITEM_TYPES', types });
+        }
+      } catch (err) {
+        if (!cancelled) {
+          const message = err instanceof Error ? err.message : String(err);
+          dispatch({ type: 'SET_ERROR', message });
         }
       } finally {
         if (!cancelled) setLoading(false);
@@ -93,15 +107,6 @@ const MappingStep: React.FC = () => {
     );
   };
 
-  const handleToggleExpand = (specTypeId: string) => {
-    setExpandedRows((prev) => {
-      const next = new Set(prev);
-      if (next.has(specTypeId)) next.delete(specTypeId);
-      else next.add(specTypeId);
-      return next;
-    });
-  };
-
   const buildProfile = (): MappingProfile => {
     const now = new Date().toISOString();
     return {
@@ -111,47 +116,151 @@ const MappingStep: React.FC = () => {
       updatedAt: now,
       reqIfIdentifierField: mappingProfile?.reqIfIdentifierField ?? 'Custom.ReqIFIdentifier',
       typeMappings,
+      ...(mappingProfile?.fieldDefaults ? { fieldDefaults: mappingProfile.fieldDefaults } : {}),
     };
-  };
-
-  const handleSave = () => {
-    const profile = buildProfile();
-    dispatch({ type: 'SET_MAPPING_PROFILE', profile });
-    // ProfileSelector will call saveProfile; here we just update context
   };
 
   const handleNext = () => {
     const profile = buildProfile();
     dispatch({ type: 'SET_MAPPING_PROFILE', profile });
-    dispatch({ type: 'SET_STEP', step: 'preview' });
+    dispatch({ type: 'SET_STEP', step: 'valuemapping' });
   };
 
   // ---- Render helpers ----
-  const getAdoFields = (witName: string) =>
-    adoTypes.find((t) => t.name === witName)?.fields ?? [];
+  const getAdoFields = (witName: string) => {
+    const fields = adoTypes.find((t) => t.name === witName)?.fields ?? [];
+    return [...fields].sort((a, b) => a.name.localeCompare(b.name));
+  };
+
+  const getSpecTypeSampleObject = (specTypeId: string): SpecObject | undefined => {
+    if (!parsedDocument) return undefined;
+
+    const matching = parsedDocument.specObjectOrder
+      .map((id) => parsedDocument.specObjects.get(id))
+      .filter((obj): obj is SpecObject => Boolean(obj && obj.specTypeId === specTypeId));
+
+    if (matching.length === 0) return undefined;
+
+    const idx = Math.max(0, sampleItemNumber - 1);
+    return matching[idx] ?? matching[0];
+  };
+
+  const normalizeAttributeValue = (value: AttributeValue | undefined): string => {
+    if (!value) return '';
+
+    let text = '';
+    switch (value.type) {
+      case 'STRING':
+      case 'UNKNOWN':
+      case 'DATE':
+        text = value.value;
+        break;
+      case 'XHTML':
+        text = value.value.replace(/<[^>]*>/g, ' ');
+        break;
+      case 'INTEGER':
+      case 'REAL':
+      case 'BOOLEAN':
+        text = String(value.value);
+        break;
+      case 'ENUMERATION':
+        text = value.value.join(', ');
+        break;
+      default:
+        text = '';
+    }
+
+    return text.replace(/\s+/g, ' ').trim();
+  };
+
+  const truncateForDisplay = (text: string, maxChars: number): string => {
+    if (text.length <= maxChars) return text;
+    return `${text.slice(0, maxChars)}…`;
+  };
+
+  const handleSamplePresetChange = (rawValue: string) => {
+    if (rawValue === 'custom') {
+      setSampleSelectionMode('custom');
+      const parsed = Number(customSampleInput);
+      const normalized = Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : 1;
+      setSampleItemNumber(normalized);
+      return;
+    }
+
+    const n = Number(rawValue);
+    const normalized = Number.isFinite(n) && n > 0 ? Math.floor(n) : 1;
+    setSampleSelectionMode('preset');
+    setSampleItemNumber(normalized);
+  };
+
+  const handleCustomSampleApply = () => {
+    const parsed = Number(customSampleInput);
+    const normalized = Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : 1;
+    setSampleItemNumber(normalized);
+  };
 
   if (!parsedDocument) {
     return <p>No document loaded. Please upload a file first.</p>;
   }
 
   const specTypesList = Array.from(parsedDocument.specTypes.values());
-  const hasUnmappedTypes = typeMappings.some((tm) => !tm.adoWorkItemType);
 
   return (
     <div className="mapping-step">
-      <ProfileSelector
-        currentMappings={typeMappings}
-        onProfileLoaded={(profile) => {
-          dispatch({ type: 'SET_MAPPING_PROFILE', profile });
-        }}
-      />
 
-      {hasUnmappedTypes && (
-        <p className="mapping-warning" role="alert">
-          Some SpecTypes have no Work Item type selected. They will be skipped during import.
-        </p>
-      )}
+      {/* ---- Sticky top bar ---- */}
+      <div className="mapping-topbar">
+        <div className="mapping-topbar__row mapping-topbar__row--profiles">
+          <ProfileSelector
+            currentMappings={typeMappings}
+            fieldDefaults={state.fieldDefaults}
+            onProfileLoaded={(profile) => {
+              dispatch({ type: 'SET_MAPPING_PROFILE', profile });
+            }}
+          />
+        </div>
+        <div className="mapping-topbar__row mapping-topbar__row--controls">
+          <div className="mapping-sample-controls" role="group" aria-label="Sample item controls">
+            <label htmlFor="sample-item-select">Sample item:</label>
+            <select
+              id="sample-item-select"
+              aria-label="Sample item number"
+              value={sampleSelectionMode === 'custom' ? 'custom' : String(sampleItemNumber)}
+              onChange={(e) => handleSamplePresetChange(e.target.value)}
+            >
+              {SAMPLE_PRESETS.map((n) => (
+                <option key={n} value={n}>{n}</option>
+              ))}
+              <option value="custom">Custom…</option>
+            </select>
+            {sampleSelectionMode === 'custom' && (
+              <>
+                <input
+                  type="number"
+                  min={1}
+                  step={1}
+                  value={customSampleInput}
+                  onChange={(e) => setCustomSampleInput(e.target.value)}
+                  aria-label="Custom sample item number"
+                />
+                <button type="button" onClick={handleCustomSampleApply}>Apply</button>
+              </>
+            )}
+          </div>
+          <div className="mapping-actions">
+            <button
+              className="btn-primary"
+              onClick={handleNext}
+              disabled={typeMappings.every((tm) => !tm.adoWorkItemType)}
+              aria-label="Next step"
+            >
+              Next →
+            </button>
+          </div>
+        </div>
+      </div>
 
+      {/* ---- Scrollable mapping table ---- */}
       {loading ? (
         <p>Loading ADO work item types…</p>
       ) : (
@@ -160,13 +269,11 @@ const MappingStep: React.FC = () => {
             <tr role="row">
               <th>ReqIF SpecType</th>
               <th>ADO Work Item Type</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
             {specTypesList.map((st) => {
               const tm = typeMappings.find((m) => m.reqIfSpecTypeId === st.identifier);
-              const expanded = expandedRows.has(st.identifier);
               const fields = getAdoFields(tm?.adoWorkItemType ?? '');
 
               return (
@@ -179,63 +286,62 @@ const MappingStep: React.FC = () => {
                         value={tm?.adoWorkItemType ?? ''}
                         onChange={(e) => handleWITypeChange(st.identifier, e.target.value)}
                       >
-                        <option value="">— Select —</option>
+                        <option value="">— Not Selected for import —</option>
                         {adoTypes.map((t) => (
-                          <option key={t.referenceName} value={t.name}>
-                            {t.name}
-                          </option>
+                          <option key={t.referenceName} value={t.name}>{t.name}</option>
                         ))}
                       </select>
                     </td>
-                    <td>
-                      <button
-                        onClick={() => handleToggleExpand(st.identifier)}
-                        aria-expanded={expanded}
-                        disabled={!tm?.adoWorkItemType}
-                      >
-                        {expanded ? 'Collapse' : 'Map fields'}
-                      </button>
-                    </td>
                   </tr>
 
-                  {expanded && (
+                  {tm?.adoWorkItemType && (
                     <tr role="row">
-                      <td colSpan={3}>
+                      <td colSpan={2}>
                         <table className="attr-mapping-table">
                           <thead>
                             <tr>
                               <th>ReqIF Attribute</th>
+                              <th>Example value</th>
                               <th>ADO Field</th>
                             </tr>
                           </thead>
                           <tbody>
-                            {tm?.attributeMappings.map((am) => (
-                              <tr key={am.reqIfAttributeId}>
-                                <td>{am.reqIfAttributeName}</td>
-                                <td>
-                                  <select
-                                    aria-label={`ADO field for ${am.reqIfAttributeName}`}
-                                    value={am.adoFieldRefName}
-                                    onChange={(e) => {
-                                      const sel = fields.find((f) => f.referenceName === e.target.value);
-                                      handleAttrMappingChange(
-                                        st.identifier,
-                                        am.reqIfAttributeId,
-                                        e.target.value,
-                                        sel?.name ?? ''
-                                      );
-                                    }}
-                                  >
-                                    <option value="">— Skip —</option>
-                                    {fields.map((f) => (
-                                      <option key={f.referenceName} value={f.referenceName}>
-                                        {f.name}
-                                      </option>
-                                    ))}
-                                  </select>
-                                </td>
-                              </tr>
-                            ))}
+                            {tm.attributeMappings.map((am) => {
+                              const sampleObj = getSpecTypeSampleObject(st.identifier);
+                              const sampleAttr = sampleObj?.attributeValues.get(am.reqIfAttributeId);
+                              const fullSampleText = normalizeAttributeValue(sampleAttr);
+                              const sampleText = truncateForDisplay(fullSampleText, MAX_PREVIEW_CHARS);
+                              const sampleTooltipText = truncateForDisplay(fullSampleText, MAX_TOOLTIP_CHARS);
+
+                              return (
+                                <tr key={am.reqIfAttributeId}>
+                                  <td>{am.reqIfAttributeName}</td>
+                                  <td className="attr-example" title={sampleTooltipText}>
+                                    {sampleText || '—'}
+                                  </td>
+                                  <td>
+                                    <select
+                                      aria-label={`ADO field for ${am.reqIfAttributeName}`}
+                                      value={am.adoFieldRefName}
+                                      onChange={(e) => {
+                                        const sel = fields.find((f) => f.referenceName === e.target.value);
+                                        handleAttrMappingChange(
+                                          st.identifier,
+                                          am.reqIfAttributeId,
+                                          e.target.value,
+                                          sel?.name ?? ''
+                                        );
+                                      }}
+                                    >
+                                      <option value="">— Skip —</option>
+                                      {fields.map((f) => (
+                                        <option key={f.referenceName} value={f.referenceName}>{f.name}</option>
+                                      ))}
+                                    </select>
+                                  </td>
+                                </tr>
+                              );
+                            })}
                           </tbody>
                         </table>
                       </td>
@@ -247,19 +353,6 @@ const MappingStep: React.FC = () => {
           </tbody>
         </table>
       )}
-
-      <div className="mapping-actions">
-        <button onClick={handleSave} aria-label="Save profile">
-          Save
-        </button>
-        <button
-          onClick={handleNext}
-          disabled={typeMappings.every((tm) => !tm.adoWorkItemType)}
-          aria-label="Next step"
-        >
-          Next →
-        </button>
-      </div>
     </div>
   );
 };

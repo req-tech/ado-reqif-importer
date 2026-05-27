@@ -2,7 +2,7 @@
  * T029 — MappingStep tests (must fail before T030 implementation)
  */
 
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import MappingStep from '../../../src/components/MappingStep/MappingStep';
 import * as WizardContext from '../../../src/context/wizard-context';
 import type { WizardState } from '../../../src/context/wizard-context';
@@ -85,6 +85,7 @@ function renderWithContext(statePatch?: Partial<WizardState>) {
     importStatus: null,
     importReport: null,
     globalError: null,
+    fieldDefaults: {},
     ...statePatch,
   };
 
@@ -121,26 +122,11 @@ describe('MappingStep', () => {
     });
   });
 
-  it('shows a warning when a SpecType has no WI type selected', async () => {
-    const { getAllByRole } = renderWithContext();
-    await waitFor(() => {
-      const buttons = getAllByRole('button', { name: /save/i });
-      expect(buttons.length).toBeGreaterThanOrEqual(1);
-    });
-  });
-
-  it('Save button calls saveProfile with the current mapping', async () => {
-    const { saveProfile } = jest.requireMock('../../../src/services/storage-service') as { saveProfile: jest.Mock };
+  it('Next button is disabled when no WI type is selected', async () => {
     const { getByRole } = renderWithContext();
-
     await waitFor(() => {
-      expect(getByRole('button', { name: 'Save profile' })).toBeTruthy();
-    });
-
-    fireEvent.click(getByRole('button', { name: 'Save profile' }));
-
-    await waitFor(() => {
-      expect(saveProfile).not.toThrow();
+      const nextBtn = getByRole('button', { name: /next/i });
+      expect((nextBtn as HTMLButtonElement).disabled).toBe(true);
     });
   });
 });

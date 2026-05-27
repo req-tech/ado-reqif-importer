@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ASCII"?>
+<configuration:ProrToolExtension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://eclipse.org/rmf/pror/toolextensions/1.0">
+  <specViewConfigurations>
+    <specification href="Nin1_LEB_HL_LAH_Basis_19250150.reqif#_d882efea-3502-434a-9751-57b4a3e68cec"/>
+    <columns xsi:type="configuration:UnifiedColumn" label="Main" width="773"/>
+    <columns label="ReqIF.Category" width="100"/>
+    <columns label="ReqIF.ForeignID" width="100"/>
+    <columns label="Text &#xfc;bersetzt" width="410"/>
+    <columns label="Status Lieferant A" width="100"/>
+    <columns label="Status Lieferant B" width="100"/>
+    <columns label="Status Lieferant C" width="100"/>
+    <columns label="Status Lieferant D" width="100"/>
+    <columns label="Status Lieferant E" width="100"/>
+    <columns label="Status Lieferant F" width="100"/>
+    <columns label="Status Lieferant G" width="100"/>
+    <columns label="Status Lieferant H" width="100"/>
+    <columns label="Status Lieferant I" width="100"/>
+    <columns label="Status Lieferant J" width="100"/>
+    <columns label="Status Lieferant K" width="100"/>
+    <columns label="Status Lieferant L" width="100"/>
+    <columns label="Status Lieferant M" width="100"/>
+    <columns label="Status Lieferant N" width="100"/>
+    <columns label="Status Lieferant O" width="100"/>
+    <columns label="Status Lieferant P" width="100"/>
+    <columns label="Status Lieferant Q" width="100"/>
+    <columns label="Status Lieferant R" width="100"/>
+    <columns label="Status Lieferant S" width="100"/>
+    <columns label="Status Lieferant T" width="100"/>
+    <columns label="Status Lieferant U" width="100"/>
+    <columns label="Status Lieferant V" width="100"/>
+    <columns label="Status Lieferant W" width="100"/>
+    <columns label="Kommentar Lieferant A" width="100"/>
+    <columns label="Kommentar Lieferant B" width="100"/>
+    <columns label="Kommentar Lieferant C" width="100"/>
+    <columns label="Kommentar Lieferant D" width="100"/>
+    <columns label="Kommentar Lieferant E" width="100"/>
+    <columns label="Kommentar Lieferant F" width="100"/>
+    <columns label="Kommentar Lieferant G" width="100"/>
+    <columns label="Kommentar Lieferant H" width="100"/>
+    <columns label="Kommentar Lieferant I" width="100"/>
+    <columns label="Kommentar Lieferant J" width="100"/>
+    <columns label="Kommentar Lieferant K" width="100"/>
+    <columns label="Kommentar Lieferant L" width="100"/>
+    <columns label="Kommentar Lieferant M" width="100"/>
+    <columns label="Kommentar Lieferant N" width="100"/>
+    <columns label="Kommentar Lieferant O" width="100"/>
+    <columns label="Kommentar Lieferant P" width="100"/>
+    <columns label="Kommentar Lieferant Q" width="100"/>
+    <columns label="Kommentar Lieferant R" width="100"/>
+    <columns label="Kommentar Lieferant S" width="100"/>
+    <columns label="Kommentar Lieferant T" width="100"/>
+    <columns label="Kommentar Lieferant U" width="100"/>
+    <columns label="Kommentar Lieferant V" width="100"/>
+    <columns label="Kommentar Lieferant W" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant A" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant B" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant C" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant D" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant E" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant F" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant G" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant H" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant I" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant J" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant K" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant L" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant M" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant N" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant O" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant P" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant Q" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant R" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant S" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant T" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant U" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant V" width="100"/>
+    <columns label="Kommentar OEM zu Lieferant W" width="100"/>
+    <columns label="Status OEM zu Lieferant A" width="100"/>
+    <columns label="Status OEM zu Lieferant B" width="100"/>
+    <columns label="Status OEM zu Lieferant C" width="100"/>
+    <columns label="Status OEM zu Lieferant D" width="100"/>
+    <columns label="Status OEM zu Lieferant E" width="100"/>
+    <columns label="Status OEM zu Lieferant F" width="100"/>
+    <columns label="Status OEM zu Lieferant G" width="100"/>
+    <columns label="Status OEM zu Lieferant H" width="100"/>
+    <columns label="Status OEM zu Lieferant I" width="100"/>
+    <columns label="Status OEM zu Lieferant J" width="100"/>
+    <columns label="Status OEM zu Lieferant K" width="100"/>
+    <columns label="Status OEM zu Lieferant L" width="100"/>
+    <columns label="Status OEM zu Lieferant M" width="100"/>
+    <columns label="Status OEM zu Lieferant N" width="100"/>
+    <columns label="Status OEM zu Lieferant O" width="100"/>
+    <columns label="Status OEM zu Lieferant P" width="100"/>
+    <columns label="Status OEM zu Lieferant Q" width="100"/>
+    <columns label="Status OEM zu Lieferant R" width="100"/>
+    <columns label="Status OEM zu Lieferant S" width="100"/>
+    <columns label="Status OEM zu Lieferant T" width="100"/>
+    <columns label="Status OEM zu Lieferant U" width="100"/>
+    <columns label="Status OEM zu Lieferant V" width="100"/>
+    <columns label="Status OEM zu Lieferant W" width="100"/>
+    <leftHeaderColumn label="Lead Header Column" width="30"/>
+  </specViewConfigurations>
+  <generalConfiguration>
+    <labelConfiguration>
+      <defaultLabel>ReqIF.ChapterNumber</defaultLabel>
+      <defaultLabel>ReqIF.ChapterName</defaultLabel>
+      <defaultLabel>ReqIF.Name</defaultLabel>
+      <defaultLabel>ReqIF.Text</defaultLabel>
+      <defaultLabel>ID</defaultLabel>
+      <defaultLabel>Name</defaultLabel>
+      <defaultLabel>Description</defaultLabel>
+    </labelConfiguration>
+  </generalConfiguration>
+</configuration:ProrToolExtension>

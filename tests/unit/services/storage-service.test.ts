@@ -1,143 +1,121 @@
 /**
- * T025 — storage-service tests (must fail before T026 implementation)
+ * storage-service tests — file-based export / import
  */
 
-import {
-  listProfiles,
-  loadProfile,
-  saveProfile,
-  deleteProfile,
-} from '../../../src/services/storage-service';
+import { exportProfile, importProfileFromFile } from '../../../src/services/storage-service';
 import type { MappingProfile } from '../../../src/models/mapping';
-
-// ---------------------------------------------------------------------------
-// Mock IExtensionDataService
-// ---------------------------------------------------------------------------
-
-const mockDocuments: Map<string, unknown> = new Map();
-
-const mockDataService = {
-  getDocuments: jest.fn(async (_collection: string) => {
-    return Array.from(mockDocuments.values());
-  }),
-  getDocument: jest.fn(async (_collection: string, id: string) => {
-    const doc = mockDocuments.get(id);
-    if (!doc) throw Object.assign(new Error('Not found'), { status: 404 });
-    return doc;
-  }),
-  setDocument: jest.fn(async (_collection: string, doc: Record<string, unknown>) => {
-    mockDocuments.set(doc.id as string, doc);
-    return doc;
-  }),
-  deleteDocument: jest.fn(async (_collection: string, id: string) => {
-    mockDocuments.delete(id);
-  }),
-};
-
-jest.mock('azure-devops-extension-sdk', () => ({
-  getService: jest.fn(async () => mockDataService),
-  CommonServiceIds: { ExtensionDataService: 'ExtensionDataService' },
-}));
 
 // ---------------------------------------------------------------------------
 // Fixtures
 // ---------------------------------------------------------------------------
 
-const profile1: MappingProfile = {
+const profile: MappingProfile = {
   id: 'profile-1',
   displayName: 'My Profile',
   createdAt: '2024-01-01T00:00:00Z',
   updatedAt: '2024-01-01T00:00:00Z',
   reqIfIdentifierField: 'Custom.ReqIFId',
-  typeMappings: [],
-};
-
-const profile2: MappingProfile = {
-  ...profile1,
-  id: 'profile-2',
-  displayName: 'Another Profile',
+  typeMappings: [
+    {
+      reqIfSpecTypeId: 'type-1',
+      reqIfSpecTypeName: 'System Requirement',
+      adoWorkItemType: 'System Requirement',
+      attributeMappings: [],
+    },
+  ],
 };
 
 // ---------------------------------------------------------------------------
-// Tests
+// DOM mocks needed by exportProfile
 // ---------------------------------------------------------------------------
 
-describe('storage-service', () => {
-  beforeEach(() => {
-    mockDocuments.clear();
-    jest.clearAllMocks();
-    // Re-attach mocks after clearAllMocks
-    mockDataService.getDocuments.mockImplementation(async () =>
-      Array.from(mockDocuments.values())
-    );
-    mockDataService.getDocument.mockImplementation(async (_c: string, id: string) => {
-      const doc = mockDocuments.get(id);
-      if (!doc) throw Object.assign(new Error('Not found'), { status: 404 });
-      return doc;
-    });
-    mockDataService.setDocument.mockImplementation(async (_c: string, doc: Record<string, unknown>) => {
-      mockDocuments.set(doc.id as string, doc);
-      return doc;
-    });
-    mockDataService.deleteDocument.mockImplementation(async (_c: string, id: string) => {
-      mockDocuments.delete(id);
-    });
+beforeEach(() => {
+  const anchor = {
+    href: '',
+    download: '',
+    click: jest.fn(),
+  } as unknown as HTMLAnchorElement;
+
+  jest.spyOn(document, 'createElement').mockReturnValue(anchor);
+  jest.spyOn(document.body, 'appendChild').mockImplementation(() => anchor);
+  jest.spyOn(document.body, 'removeChild').mockImplementation(() => anchor);
+
+  (URL as unknown as { createObjectURL: jest.Mock }).createObjectURL = jest.fn(() => 'blob:mock');
+  (URL as unknown as { revokeObjectURL: jest.Mock }).revokeObjectURL = jest.fn();
+});
+
+afterEach(() => {
+  jest.restoreAllMocks();
+});
+
+// ---------------------------------------------------------------------------
+// exportProfile
+// ---------------------------------------------------------------------------
+
+describe('exportProfile', () => {
+  it('creates a blob URL and triggers a download click', () => {
+    exportProfile(profile);
+
+    expect(URL.createObjectURL).toHaveBeenCalledWith(expect.any(Blob));
+    const anchor = document.createElement('a') as unknown as { click: jest.Mock; download: string };
+    expect(anchor.click).toHaveBeenCalled();
+    expect(URL.revokeObjectURL).toHaveBeenCalledWith('blob:mock');
   });
 
-  describe('listProfiles', () => {
-    it('returns an empty array when no profiles exist', async () => {
-      const profiles = await listProfiles();
-      expect(profiles).toEqual([]);
-    });
+  it('uses a safe filename derived from displayName', () => {
+    exportProfile({ ...profile, displayName: 'My Profile (v2)' });
 
-    it('returns all saved profiles', async () => {
-      mockDocuments.set(profile1.id, profile1);
-      mockDocuments.set(profile2.id, profile2);
-
-      const profiles = await listProfiles();
-      expect(profiles).toHaveLength(2);
-    });
+    const anchor = document.createElement('a') as unknown as { download: string };
+    expect(anchor.download).toMatch(/My_Profile__v2_\.json/);
   });
 
-  describe('loadProfile', () => {
-    it('returns null when profile does not exist', async () => {
-      const profile = await loadProfile('nonexistent');
-      expect(profile).toBeNull();
+  it('serialises all typeMappings into the downloaded JSON', () => {
+    let capturedBlob: Blob | undefined;
+    (URL.createObjectURL as jest.Mock).mockImplementation((b: Blob) => {
+      capturedBlob = b;
+      return 'blob:mock';
     });
 
-    it('returns the profile when it exists', async () => {
-      mockDocuments.set(profile1.id, profile1);
+    exportProfile(profile);
 
-      const profile = await loadProfile(profile1.id);
-      expect(profile).toMatchObject({ id: 'profile-1', displayName: 'My Profile' });
-    });
-  });
-
-  describe('saveProfile', () => {
-    it('saves a new profile', async () => {
-      await saveProfile(profile1);
-      expect(mockDataService.setDocument).toHaveBeenCalledWith(
-        expect.any(String),
-        expect.objectContaining({ id: 'profile-1' })
-      );
-    });
-
-    it('upserts an existing profile', async () => {
-      mockDocuments.set(profile1.id, profile1);
-      const updated = { ...profile1, displayName: 'Updated' };
-
-      await saveProfile(updated);
-      const saved = mockDocuments.get(profile1.id) as MappingProfile;
-      expect(saved.displayName).toBe('Updated');
-    });
-  });
-
-  describe('deleteProfile', () => {
-    it('removes a profile by id', async () => {
-      mockDocuments.set(profile1.id, profile1);
-
-      await deleteProfile(profile1.id);
-      expect(mockDocuments.has(profile1.id)).toBe(false);
-    });
+    expect(capturedBlob).toBeDefined();
   });
 });
+
+// ---------------------------------------------------------------------------
+// importProfileFromFile
+// ---------------------------------------------------------------------------
+
+function makeFile(content: string, name = 'config.json'): File {
+  const file = new File([content], name, { type: 'application/json' });
+  // jsdom's File doesn't implement .text() — polyfill it for tests
+  Object.defineProperty(file, 'text', {
+    value: () => Promise.resolve(content),
+  });
+  return file;
+}
+
+describe('importProfileFromFile', () => {
+  it('parses a valid mapping config file', async () => {
+    const file = makeFile(JSON.stringify(profile));
+    const result = await importProfileFromFile(file);
+    expect(result.typeMappings).toHaveLength(1);
+    expect(result.displayName).toBe('My Profile');
+  });
+
+  it('throws when the file is not valid JSON', async () => {
+    const file = makeFile('not json');
+    await expect(importProfileFromFile(file)).rejects.toThrow('File is not valid JSON.');
+  });
+
+  it('throws when typeMappings is missing', async () => {
+    const file = makeFile(JSON.stringify({ id: 'x', displayName: 'x' }));
+    await expect(importProfileFromFile(file)).rejects.toThrow('missing typeMappings array');
+  });
+
+  it('throws when typeMappings is not an array', async () => {
+    const file = makeFile(JSON.stringify({ ...profile, typeMappings: 'bad' }));
+    await expect(importProfileFromFile(file)).rejects.toThrow('missing typeMappings array');
+  });
+});
+

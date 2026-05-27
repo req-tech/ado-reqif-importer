@@ -89,3 +89,92 @@ export async function createWorkItem(
 
   throw lastError;
 }
+
+/**
+ * Update an existing ADO Work Item's fields.
+ */
+export async function updateWorkItem(
+  project: string,
+  workItemId: number,
+  fields: Record<string, string>
+): Promise<WorkItemResult> {
+  const client = getClient<WorkItemTrackingRestClient>(
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    require('azure-devops-extension-api/WorkItemTracking').WorkItemTrackingRestClient
+  );
+
+  const patch = Object.entries(fields).map(([refName, value]) => ({
+    op: 'add' as const,
+    path: `/fields/${refName}`,
+    from: null as unknown as string,
+    value,
+  })) as unknown as JsonPatchOperation[];
+
+  let lastError: unknown;
+
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    try {
+      const workItem = await client.updateWorkItem(patch, workItemId, project);
+      return { id: workItem.id ?? 0, url: workItem.url ?? '' };
+    } catch (err) {
+      lastError = err;
+      if (!isRetryable(err)) throw err;
+      if (attempt < MAX_RETRIES - 1) {
+        await sleep(BASE_BACKOFF_MS * Math.pow(2, attempt));
+      }
+    }
+  }
+
+  throw lastError;
+}
+
+/**
+ * Query ADO for all work items in the project that already have the given
+ * identifier field set.  Returns a Map of identifier value → work item ID so
+ * the import can detect duplicates and update them instead of re-creating.
+ *
+ * Returns an empty Map if the field does not exist or the query fails for
+ * any reason (graceful degradation — the import still runs but will create
+ * duplicates rather than aborting).
+ */
+export async function queryExistingIdentifiers(
+  project: string,
+  identifierFieldRefName: string
+): Promise<Map<string, number>> {
+  try {
+    const client = getClient<WorkItemTrackingRestClient>(
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      require('azure-devops-extension-api/WorkItemTracking').WorkItemTrackingRestClient
+    );
+
+    const wiqlResult = await client.queryByWiql(
+      {
+        query: `SELECT [System.Id] FROM WorkItems WHERE [System.TeamProject] = @project AND [${identifierFieldRefName}] <> ''`,
+      },
+      project
+    );
+
+    const refs = (wiqlResult.workItems ?? []) as { id?: number }[];
+    if (refs.length === 0) return new Map();
+
+    const ids = refs.map((wi) => wi.id).filter((id): id is number => typeof id === 'number');
+    const result = new Map<string, number>();
+
+    // Fetch actual field values in batches of 200 (ADO REST limit)
+    for (let i = 0; i < ids.length; i += 200) {
+      const batch = ids.slice(i, i + 200);
+      const items = await client.getWorkItems(batch, project, [identifierFieldRefName]);
+      for (const item of items ?? []) {
+        const val = (item.fields as Record<string, unknown>)?.[identifierFieldRefName];
+        if (val != null && val !== '' && item.id != null) {
+          result.set(String(val), item.id);
+        }
+      }
+    }
+
+    return result;
+  } catch {
+    // Field may not exist yet or project has no items — safe to continue
+    return new Map<string, number>();
+  }
+}

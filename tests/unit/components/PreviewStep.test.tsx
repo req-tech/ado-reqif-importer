@@ -17,6 +17,11 @@ jest.mock('../../../src/services/import-service', () => ({
   computePreview: jest.fn(() => mockPreview),
 }));
 
+jest.mock('../../../src/services/ado-metadata-service', () => ({
+  getIterationPaths: jest.fn(() => Promise.resolve([])),
+  getAreaPaths: jest.fn(() => Promise.resolve([])),
+}));
+
 // ---------------------------------------------------------------------------
 // Fixtures
 // ---------------------------------------------------------------------------
@@ -80,6 +85,7 @@ function renderWithContext(statePatch?: Partial<WizardState>) {
     importStatus: null,
     importReport: null,
     globalError: null,
+    fieldDefaults: {},
     ...statePatch,
   };
 

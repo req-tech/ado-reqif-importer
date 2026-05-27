@@ -6,8 +6,9 @@ import './WizardNav.css';
 const STEPS: { id: WizardStep; label: string }[] = [
   { id: 'upload', label: '1. Upload' },
   { id: 'mapping', label: '2. Mapping' },
-  { id: 'preview', label: '3. Preview' },
-  { id: 'import', label: '4. Import' },
+  { id: 'valuemapping', label: '3. Values' },
+  { id: 'preview', label: '4. Preview' },
+  { id: 'import', label: '5. Import' },
 ];
 
 const WizardNav: React.FC = () => {

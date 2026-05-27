@@ -1,0 +1,85 @@
+.value-mapping-step {
+  padding: 0;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+}
+
+.value-mapping-content {
+  padding: 16px 20px;
+}
+
+.value-mapping-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+}
+
+.value-mapping-table th,
+.value-mapping-table td {
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.value-mapping-table th {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: #f8f8f8;
+}
+
+.value-mapping-table tr:hover td {
+  background: #fafafa;
+}
+
+.value-mapping-field-name {
+  font-weight: 500;
+  vertical-align: top;
+  padding-top: 12px;
+  border-right: 2px solid #e0e0e0;
+  min-width: 200px;
+}
+
+.value-mapping-ado-field {
+  font-weight: normal;
+  color: #666;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 2px;
+}
+
+.value-mapping-source-value {
+  color: #0078d4;
+  font-weight: 500;
+  min-width: 140px;
+}
+
+.value-mapping-arrow {
+  color: #888;
+  font-size: 1.1rem;
+  width: 32px;
+  text-align: center;
+}
+
+.value-mapping-table select {
+  min-width: 200px;
+  padding: 4px 8px;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+.value-mapping-table select:focus {
+  outline: 2px solid #0078d4;
+  border-color: #0078d4;
+}
+
+.value-mapping-empty {
+  color: #666;
+  font-style: italic;
+  margin: 16px 0 32px;
+}

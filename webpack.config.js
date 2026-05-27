@@ -47,7 +47,7 @@ module.exports = (env, argv) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './src/hub/hub.html',
-        filename: isDev ? 'hub/hub.html' : 'hub.html',
+        filename: 'hub.html',
         inject: 'body',
       }),
     ],
